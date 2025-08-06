@@ -1,0 +1,6 @@
+-- require("config.options")
+-- require("config.autocmds")
+require("config.lazy")
+require("lsp.luals")
+require("lsp.rust")
+require("lsp.vue")
