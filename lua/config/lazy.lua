@@ -38,10 +38,10 @@ require("lazy").setup({
 
 require("config.keymaps")
 
+require("lsp.lsp_MASTER")
 require("lsp.luals")
 require("lsp.rust")
 require("lsp.vue")
-require("config.autocmds")
 
 -- For video recording purposes
 -- vim.cmd("ShowkeysToggle")
