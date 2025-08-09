@@ -24,6 +24,7 @@ local vtsls_config = {
 
 local vue_ls_config = {
     cmd = { "vue-language-server", "--stdio" }, -- Add this line
+    filetypes = { "vue" },
 }
 
 vim.lsp.config("vtsls", vtsls_config)
