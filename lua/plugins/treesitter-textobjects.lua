@@ -48,15 +48,15 @@ return {
                     -- and should return true or false
                     include_surrounding_whitespace = true,
                 },
-                swap = {
-                    enable = true,
-                    swap_next = {
-                        ["<leader>a"] = { query = "@parameter.inner", desc = "Swap with next parameter" },
-                    },
-                    swap_previous = {
-                        ["<leader>A"] = "@parameter.inner",
-                    },
-                },
+                -- swap = {
+                --     enable = true,
+                --     swap_next = {
+                --         ["<leader>a"] = { query = "@parameter.inner", desc = "Swap with next parameter" },
+                --     },
+                --     swap_previous = {
+                --         ["<leader>A"] = "@parameter.inner",
+                --     },
+                -- },
             },
         })
     end,
