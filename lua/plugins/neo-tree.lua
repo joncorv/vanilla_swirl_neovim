@@ -14,9 +14,15 @@ return {
     opts = {
 
       close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
-      -- popup_border_style = "winborder", -- or "" to use 'winborder' on Neovim v0.11+
+      popup_border_style = "", -- or "" to use 'winborder' on Neovim v0.11+
       open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
+      window = {
+        mappings = {
+          ["<space>"] = "none", -- This disables space key in Neotree window
+        },
+      },
     },
+    keys = {},
   },
 
   {
