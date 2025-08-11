@@ -14,6 +14,7 @@ return {
   keys = {
     { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next buffer" },
     { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Previous buffer" },
+    { "<leader>bd", "<Cmd>bd<CR>", desc = "Delete Buffer" },
     { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle pin" },
     { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete non-pinned buffers" },
     { "<leader>bo", "<Cmd>BufferLineCloseOthers<CR>", desc = "Delete other buffers" },
@@ -47,6 +48,9 @@ return {
 
       -- Buffer numbering
       numbers = "none", -- "none" | "ordinal" | "buffer_id" | function
+
+      -- setting the Close buffer command
+      close_command = ":Bdelete",
 
       -- Sorting
       sort_by = "id", -- "id" | "extension" | "relative_directory" | "directory" | "tabs"
