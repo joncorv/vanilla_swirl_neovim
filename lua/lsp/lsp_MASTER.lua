@@ -1,7 +1,7 @@
 require("lsp.luals")
 require("lsp.rust")
 require("lsp.vue")
-require("lsp.basedpyright")
+require("lsp.python")
 
 -- vim.lsp.enable("lua_ls", "vue", "rust", "rust_analyzer")
 
@@ -23,15 +23,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 
     -- LSP keymaps
-    map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
-    map("gra", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
-    map("grr", vim.lsp.buf.references, "[G]oto [R]eferences")
-    map("gri", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
-    map("grd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-    map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+    map("<Leader>cr", vim.lsp.buf.rename, "[R]e[n]ame")
+    map("<Leader>ca", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
+    map("<Leader>cr", vim.lsp.buf.references, "[G]oto [R]eferences")
+    map("<Leader>ci", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
+    map("<Leader>cd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+    map("<Leader>cD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
     -- map("gO", vim.lsp.buf.document_symbols, "Open Document Symbols")
-    map("gW", vim.lsp.buf.workspace_symbol, "Open Workspace Symbols")
-    map("grt", vim.lsp.buf.type_definition, "[G]oto [T]ype Definition")
+    map("<Leader>cw", vim.lsp.buf.workspace_symbol, "Open Workspace Symbols")
+    map("<Leader>ct", vim.lsp.buf.type_definition, "[G]oto [T]ype Definition")
 
     -- This function resolves differences between neovim versions
     ---@param client vim.lsp.Client
@@ -85,11 +85,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- code, if the language server you are using supports them
     --
     -- This may be unwanted, since they displace some of your code
-    if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-      map("<leader>th", function()
-        -- Neovim 0.12+ inlay hints API
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }), { bufnr = event.buf })
-      end, "[T]oggle Inlay [H]ints")
-    end
+    -- if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
+    --   map("<leader>th", function()
+    --     -- Neovim 0.12+ inlay hints API
+    --     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }), { bufnr = event.buf })
+    --   end, "[T]oggle Inlay [H]ints")
+    -- end
   end,
 })
