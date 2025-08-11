@@ -11,11 +11,26 @@ return {
       terminal = { enabled = true },
       notifier = { enabled = true },
       -- explorer = { enabled = true },
+      -- files = { enabled = true },
+      bufdelete = { enabled = true },
     },
     keys = {
 
-      { "<Leader>gg", ":lua Snacks.lazygit.open()<CR>", desc = "Open Lazygit" },
-      { "<Leader>D", ":lua Snacks.dashboard.open()<CR>", desc = "Open Dashboard" },
+      {
+        "<Leader>gg",
+        function()
+          Snacks.lazygit.open()
+        end,
+        desc = "Open Lazygit",
+      },
+
+      {
+        "<Leader>D",
+        function()
+          Snacks.dashboard.open()
+        end,
+        desc = "Open Dashboard",
+      },
       {
         "<C-/>",
         function()
@@ -23,6 +38,13 @@ return {
         end,
         mode = { "n", "t" }, -- Specify modes here
         desc = "Toggle Terminal",
+      },
+      {
+        "<Leader>bd",
+        function()
+          Snacks.bufdelete.delete()
+        end,
+        desc = "Delete Current Buffer",
       },
     },
   },
