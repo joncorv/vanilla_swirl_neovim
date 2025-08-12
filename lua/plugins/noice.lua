@@ -82,7 +82,7 @@ return {
       function()
         require("noice").cmd("pick")
       end,
-      desc = "Noice Picker (Telescope/FzfLua)",
+      desc = "Show Notifications",
     },
     -- { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll Forward", mode = {"i", "n", "s"} },
     -- { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll Backward", mode = {"i", "n", "s"}},
@@ -104,6 +104,6 @@ return {
     -- OPTIONAL:
     --   `nvim-notify` is only needed, if you want to use the notification view.
     --   If not available, we use `mini` as the fallback
-    -- "rcarriga/nvim-notify",
+    "rcarriga/nvim-notify",
   },
 }
