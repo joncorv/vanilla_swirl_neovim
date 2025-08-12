@@ -24,3 +24,6 @@ vim.keymap.set("n", "|", ":Neotree reveal<CR>", {
   silent = true,
   noremap = true,
 })
+
+-- yank no longer replaces any overwtitten text in the register
+vim.keymap.set("x", "p", "P", { silent = true })
