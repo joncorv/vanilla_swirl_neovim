@@ -12,7 +12,7 @@ return {
     ---@module 'neo-tree'
     ---@type neotree.Config
     opts = {
-
+      use_libuv_file_watcher = true,
       close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
       popup_border_style = "", -- or "" to use 'winborder' on Neovim v0.11+
       open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
