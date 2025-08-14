@@ -3,6 +3,15 @@ require("lsp.luals")
 require("lsp.vue")
 require("lsp.python")
 
+-- -- Set LSP handlers with borders BEFORE the LspAttach autocmd
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+--   border = "double",
+-- })
+--
+-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+--   border = "double",
+-- })
+
 -- vim.lsp.enable("lua_ls", "vue", "rust", "rust_analyzer")
 
 --  This function gets run when an LSP attaches to a particular buffer.
@@ -22,6 +31,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
     end
 
+    map("K", function()
+      local params = vim.lsp.util.make_position_params()
+      vim.lsp.buf_request(0, "textDocument/hover", params, vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }))
+    end, "Hover with border")
+
     -- LSP keymaps
     map("<Leader>cr", vim.lsp.buf.rename, "[R]e[n]ame")
     map("<Leader>ca", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
@@ -33,14 +47,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("<Leader>cw", vim.lsp.buf.workspace_symbol, "Open Workspace Symbols")
     map("<Leader>ct", vim.lsp.buf.type_definition, "[G]oto [T]ype Definition")
 
-    -- The following code creates a keymap to toggle inlay hints in your
-    -- code, if the language server you are using supports them
-    --
-    -- This may be unwanted, since they displace some of your code
-    -- if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
+    map("<leader>td", vim.diagnostic.open_float, "[Toggle] [L]ine Diagnostics")
     map("<leader>th", function()
-      -- Neovim 0.12+ inlay hints API
-      -- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }), { bufnr = event.buf })
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end, "[T]oggle Inlay [H]ints")
 
@@ -92,15 +100,27 @@ vim.api.nvim_create_autocmd("LspAttach", {
       })
     end
 
+    vim.api.nvim_create_autocmd("CursorHold", {
+      callback = function()
+        local opts = {
+          focusable = false,
+          close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+          border = "rounded",
+          source = "always",
+          prefix = " ",
+        }
+        vim.diagnostic.open_float(nil, opts)
+      end,
+    })
     -- The following code creates a keymap to toggle inlay hints in your
     -- code, if the language server you are using supports them
     --
     -- This may be unwanted, since they displace some of your code
     -- if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-    map("<leader>th", function()
-      -- Neovim 0.12+ inlay hints API
-      -- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }), { bufnr = event.buf })
-      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-    end, "[T]oggle Inlay [H]ints")
+    -- map("<leader>th", function()
+    --   -- Neovim 0.12+ inlay hints API
+    --   -- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }), { bufnr = event.buf })
+    --   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    -- end, "[T]oggle Inlay [H]ints")
   end,
 })
