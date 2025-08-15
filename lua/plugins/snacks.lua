@@ -45,7 +45,17 @@ return {
       -- explorer = { enabled = true },
       bufdelete = { enabled = true },
       -- profiler = { enabled = true },
-      -- indent = { enabled = true },
+      -- scope = { enabled = true },
+      -- indent = {
+      --   enabled = true,
+      --
+      --   -- animate = {
+      --   --   enabled = false,
+      --   -- },
+      --   scope = {
+      --     underline = true,
+      --   },
+      -- },
     },
     keys = {
 
