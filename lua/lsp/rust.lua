@@ -5,7 +5,7 @@ vim.lsp.config("rust_analyzer", {
         enable = false,
       },
       checkOnSave = {
-        command = "cargo clippy",
+        command = "cargo check",
       },
       cargo = {
         allFeatures = true,
