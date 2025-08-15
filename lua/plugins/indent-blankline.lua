@@ -43,7 +43,6 @@ return {
       local comment_fg = vim.api.nvim_get_hl(0, { name = "Comment" }).fg or 0x5c6370
 
       -- Create a much more subtle color for regular indent guides
-      -- Take the comment color and make it even more muted
       local function blend_colors(fg, bg, alpha)
         local function extract_rgb(color)
           return bit.rshift(color, 16), bit.rshift(bit.band(color, 0xff00), 8), bit.band(color, 0xff)
@@ -98,7 +97,7 @@ return {
         enabled = true,
         show_start = true,
         show_end = true,
-        injected_languages = false,
+        injected_languages = false, -- Keep false by default
         -- Use rainbow colors only for active scope
         highlight = highlight,
         priority = 500,
@@ -131,6 +130,18 @@ return {
 
     -- Integration with Rainbow Delimiters
     hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+
+    -- Vue-specific configuration for injected languages
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "vue",
+      callback = function()
+        require("ibl").setup_buffer(0, {
+          scope = {
+            injected_languages = true,
+          },
+        })
+      end,
+    })
 
     -- Initialize the toggle state
     vim.g.ibl_enabled = true
