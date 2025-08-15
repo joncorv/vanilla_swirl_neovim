@@ -44,7 +44,8 @@ return {
       notify = { enabled = true },
       -- explorer = { enabled = true },
       bufdelete = { enabled = true },
-      profiler = { enabled = true },
+      -- profiler = { enabled = true },
+      -- indent = { enabled = true },
     },
     keys = {
 
