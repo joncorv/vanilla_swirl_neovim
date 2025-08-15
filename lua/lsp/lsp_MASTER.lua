@@ -39,7 +39,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- LSP keymaps
     map("<Leader>cr", vim.lsp.buf.rename, "[R]e[n]ame")
     map("<Leader>ca", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
-    map("<Leader>cr", vim.lsp.buf.references, "[G]oto [R]eferences")
+    map("<Leader>cR", vim.lsp.buf.references, "[G]oto [R]eferences")
     map("<Leader>ci", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
     map("<Leader>cd", vim.lsp.buf.definition, "[G]oto [D]efinition")
     map("<Leader>cD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
@@ -47,10 +47,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("<Leader>cw", vim.lsp.buf.workspace_symbol, "Open Workspace Symbols")
     map("<Leader>ct", vim.lsp.buf.type_definition, "[G]oto [T]ype Definition")
 
-    map("<leader>td", vim.diagnostic.open_float, "[Toggle] [L]ine Diagnostics")
+    -- All my UI Diagnostic Toggles
+    map("<leader>tl", vim.diagnostic.open_float, "[Toggle] [L]ine Diagnostics")
     map("<leader>th", function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end, "[T]oggle Inlay [H]ints")
+
+    map("<leader>td", function()
+      vim.diagnostic.config({
+        virtual_text = not vim.diagnostic.config().virtual_text,
+      })
+    end, "[T]oggle [D]iagnostic virtual text")
 
     -- This function resolves differences between neovim versions
     ---@param client vim.lsp.Client
@@ -100,7 +107,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
       })
     end
 
+    -- Toggle diagnostic Hover
+    local diagnostic_hover_enabled = true -- Start enabled by default
+    local diagnostic_hover_augroup = vim.api.nvim_create_augroup("diagnostic-hover", { clear = true })
+
+    -- Set up the initial autocmd since it's enabled by default
     vim.api.nvim_create_autocmd("CursorHold", {
+      group = diagnostic_hover_augroup,
       callback = function()
         local opts = {
           focusable = false,
@@ -112,15 +125,31 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.diagnostic.open_float(nil, opts)
       end,
     })
-    -- The following code creates a keymap to toggle inlay hints in your
-    -- code, if the language server you are using supports them
-    --
-    -- This may be unwanted, since they displace some of your code
-    -- if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-    -- map("<leader>th", function()
-    --   -- Neovim 0.12+ inlay hints API
-    --   -- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }), { bufnr = event.buf })
-    --   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-    -- end, "[T]oggle Inlay [H]ints")
+
+    map("<leader>tD", function()
+      diagnostic_hover_enabled = not diagnostic_hover_enabled
+
+      if diagnostic_hover_enabled then
+        vim.api.nvim_create_autocmd("CursorHold", {
+          group = diagnostic_hover_augroup,
+          callback = function()
+            local opts = {
+              focusable = false,
+              close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+              border = "rounded",
+              source = "always",
+              prefix = " ",
+            }
+            vim.diagnostic.open_float(nil, opts)
+          end,
+        })
+        vim.notify("Diagnostic hover on cursor hold enabled", vim.log.levels.INFO)
+      else
+        vim.api.nvim_clear_autocmds({ group = diagnostic_hover_augroup })
+        vim.notify("Diagnostic hover on cursor hold disabled", vim.log.levels.INFO)
+      end
+    end, "[T]oggle [D]iagnostic hover on cursor hold")
+    ----
+    ---
   end,
 })
