@@ -19,7 +19,6 @@ return {
         "css",
         "python",
         "html",
-        "tailwind",
       },
       sync_install = false,
       auto_install = true,
