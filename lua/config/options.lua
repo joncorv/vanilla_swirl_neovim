@@ -9,6 +9,7 @@ vim.schedule(function()
   vim.o.clipboard = "unnamedplus"
 end)
 
+vim.o.winborder = "rounded"
 vim.o.breakindent = true
 vim.o.undofile = true
 vim.o.ignorecase = true
@@ -34,12 +35,8 @@ vim.o.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.o.cursorline = true
-
 vim.o.scrolloff = 10
 
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.hl.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
   group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
