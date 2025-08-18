@@ -19,6 +19,8 @@ return {
         "css",
         "python",
         "html",
+        "json",
+        "jsonc",
       },
       sync_install = false,
       auto_install = true,
