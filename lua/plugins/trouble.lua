@@ -5,19 +5,19 @@ return {
   cmd = "Trouble",
   keys = {
     {
-      "<leader>xx",
+      "<leader>td",
       "<cmd>Trouble diagnostics toggle<cr>",
-      desc = "Diagnostics (Trouble)",
+      desc = "[T]rouble [D]iagnostics Buffer",
     },
     {
-      "<leader>xX",
+      "<leader>tD",
       "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-      desc = "Buffer Diagnostics (Trouble)",
+      desc = "[T]rouble [D]iagnostics Project",
     },
     {
       "<leader>cs",
       "<cmd>Trouble symbols toggle focus=false<cr>",
-      desc = "Symbols (Trouble)",
+      desc = "[C]ode [Symbols (Trouble)",
     },
     {
       "<leader>cl",
@@ -25,14 +25,24 @@ return {
       desc = "LSP Definitions / references / ... (Trouble)",
     },
     {
-      "<leader>xL",
-      "<cmd>Trouble loclist toggle<cr>",
-      desc = "Location List (Trouble)",
+      "<leader>tt",
+      "<cmd>Trouble todo toggle filter.buf=0 focus=false<cr>",
+      desc = "[T]rouble [T]odo Buffer",
     },
     {
-      "<leader>xQ",
-      "<cmd>Trouble qflist toggle<cr>",
-      desc = "Quickfix List (Trouble)",
+      "<leader>tT",
+      "<cmd>Trouble todo toggle focus=false<cr>",
+      desc = "[T]rouble [T]odo Project",
     },
+    -- {
+    --   "<leader>xL",
+    --   "<cmd>Trouble loclist toggle<cr>",
+    --   desc = "Location List (Trouble)",
+    -- },
+    -- {
+    --   "<leader>xQ",
+    --   "<cmd>Trouble qflist toggle<cr>",
+    --   desc = "Quickfix List (Trouble)",
+    -- },
   },
 }
