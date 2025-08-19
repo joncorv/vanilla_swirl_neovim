@@ -11,11 +11,11 @@ return {
   },
   keys = {
     {
-      "<leader>ff",
+      "<leader><leader>",
       function()
         require("fzf-lua").files()
       end,
-      desc = "Find Files in project directory",
+      desc = "[󱁐] Find Files in project directory",
     },
     {
       "<leader>uc",
@@ -102,7 +102,7 @@ return {
       desc = "[F]ind [O]ld Files",
     },
     {
-      "<leader><leader>",
+      "<leader>ff",
       function()
         require("fzf-lua").buffers()
       end,
