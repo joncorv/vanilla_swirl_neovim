@@ -37,27 +37,27 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end, "Hover with border")
 
     -- LSP keymaps
-    map("<Leader>cr", vim.lsp.buf.rename, "[R]e[n]ame")
-    map("<Leader>ca", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
-    map("<Leader>cR", vim.lsp.buf.references, "[G]oto [R]eferences")
-    map("<Leader>ci", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
-    map("<Leader>cd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-    map("<Leader>cD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+    map("<Leader>cr", vim.lsp.buf.rename, "[C]ode [R]ename Symbol")
+    map("<Leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
+    map("<Leader>cR", vim.lsp.buf.references, "[C]ode [R]eferences")
+    map("<Leader>ci", vim.lsp.buf.implementation, "[C]ode [I]mplementation")
+    map("<Leader>cd", vim.lsp.buf.definition, "[C]ode [D]efinition")
+    map("<Leader>cD", vim.lsp.buf.declaration, "[C]ode [D]eclaration")
     -- map("gO", vim.lsp.buf.document_symbols, "Open Document Symbols")
-    map("<Leader>cw", vim.lsp.buf.workspace_symbol, "Open Workspace Symbols")
-    map("<Leader>ct", vim.lsp.buf.type_definition, "[G]oto [T]ype Definition")
+    map("<Leader>cw", vim.lsp.buf.workspace_symbol, "[C]ode [W]orkspace Symbols")
+    map("<Leader>ct", vim.lsp.buf.type_definition, "[C]ode [T]ype Definition")
 
     -- All my UI Diagnostic Toggles
-    map("<leader>tl", vim.diagnostic.open_float, "[Toggle] [L]ine Diagnostics")
-    map("<leader>th", function()
+    map("<leader>ul", vim.diagnostic.open_float, "[U]I [L]ine Diagnostics")
+    map("<leader>uh", function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-    end, "[T]oggle Inlay [H]ints")
+    end, "Toggle Inlay [H]ints")
 
-    map("<leader>td", function()
+    map("<leader>uv", function()
       vim.diagnostic.config({
         virtual_text = not vim.diagnostic.config().virtual_text,
       })
-    end, "[T]oggle [D]iagnostic virtual text")
+    end, "Toggle [V]irtual text")
 
     -- This function resolves differences between neovim versions
     ---@param client vim.lsp.Client
@@ -108,7 +108,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 
     -- Toggle diagnostic Hover
-    local diagnostic_hover_enabled = true -- Start enabled by default
+    local diagnostic_hover_enabled = false -- Start enabled by default
     local diagnostic_hover_augroup = vim.api.nvim_create_augroup("diagnostic-hover", { clear = true })
 
     -- Set up the initial autocmd since it's enabled by default
@@ -126,7 +126,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
       end,
     })
 
-    map("<leader>tD", function()
+    map("<leader>uD", function()
       diagnostic_hover_enabled = not diagnostic_hover_enabled
 
       if diagnostic_hover_enabled then
@@ -148,7 +148,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.api.nvim_clear_autocmds({ group = diagnostic_hover_augroup })
         vim.notify("Diagnostic hover on cursor hold disabled", vim.log.levels.INFO)
       end
-    end, "[T]oggle [D]iagnostic hover on cursor hold")
+    end, "Toggle Auto [D]iagnostic Hover")
     ----
     ---
   end,
