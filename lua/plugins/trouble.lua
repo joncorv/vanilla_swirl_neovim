@@ -32,7 +32,7 @@ return {
     {
       "<leader>tT",
       "<cmd>Trouble todo toggle focus=false<cr>",
-      desc = "[T]rouble [T]odo Project",
+      desc = "[T]rouble [T]odo Workspace",
     },
     -- {
     --   "<leader>xL",
