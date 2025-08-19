@@ -6,13 +6,13 @@ return {
   keys = {
     {
       "<leader>td",
-      "<cmd>Trouble diagnostics toggle<cr>",
+      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
       desc = "[T]rouble [D]iagnostics Buffer",
     },
     {
       "<leader>tD",
-      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-      desc = "[T]rouble [D]iagnostics Project",
+      "<cmd>Trouble diagnostics toggle<cr>",
+      desc = "[T]rouble [D]iagnostics Workspace",
     },
     {
       "<leader>cs",
