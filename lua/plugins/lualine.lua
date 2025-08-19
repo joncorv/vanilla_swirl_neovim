@@ -40,24 +40,34 @@ return {
     end
   end,
 
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    "meuter/lualine-so-fancy.nvim",
+  },
+
   config = function()
     require("lualine").setup({
       options = {
-        theme = auto,
+        theme = "auto",
         globalstatus = vim.o.laststatus == 3,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
-        component_separators = "",
+        component_separators = "|",
         section_separators = { left = "", right = "" },
       },
       sections = {
         lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
-        lualine_b = { "filename", "branch" },
+        lualine_b = {
+          { "fancy_cwd", substitute_home = true },
+          "filename",
+          "fancy_branch",
+          "fancy_diff",
+          "fancy_diagnostics",
+        },
         lualine_c = {
           "%=", --[[ add your center components here in place of this comment ]]
         },
         lualine_x = {},
-        lualine_y = { "filetype", "progress" },
+        lualine_y = { "lsp_status", "fancy_filetype", "progress" },
         lualine_z = {
           { "location", separator = { right = "" }, left_padding = 2 },
         },
