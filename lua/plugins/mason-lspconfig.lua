@@ -1,0 +1,21 @@
+return {
+  "mason-org/mason-lspconfig.nvim",
+  opts = {
+    -- ensure_installed = { "lua_ls", "rust_analyzer" },
+    automatic_enable = {
+      exclude = {
+        "rust_analyzer",
+        "ts_ls",
+        "vue",
+        "lua_ls",
+        "python",
+        "pyright",
+        "basedpyright",
+      },
+    },
+  },
+  dependencies = {
+    { "mason-org/mason.nvim", opts = {} },
+    "neovim/nvim-lspconfig",
+  },
+}
