@@ -15,7 +15,8 @@ return {
       function()
         require("fzf-lua").files()
       end,
-      desc = "[󱁐] Find Files in project directory",
+      desc = "Find Files in project directory",
+      -- icon = "󰈞",
     },
     {
       "<leader>uc",
