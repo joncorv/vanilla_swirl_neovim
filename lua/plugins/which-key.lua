@@ -15,10 +15,15 @@ return {
         { "<leader>f", group = "file/find" },
         { "<leader>g", group = "git" },
         { "<leader>gh", group = "hunks" },
+        { "<leader>t", group = "to-do", icon = "" },
         { "<leader>q", group = "quit/session" },
         { "<leader>s", group = "search" },
         { "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
         { "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
+        { "<leader><leader>", group = "Find files", icon = { icon = "󰈞", color = "cyan" } },
+        { "<leader>/", group = "Live Grep Buffer", icon = { icon = "󰈞", color = "cyan" } },
+        { "<leader>D", group = "+dashboard" },
+        { "<leader>n", group = "+notifications" },
         { "[", group = "prev" },
         { "]", group = "next" },
         { "g", group = "goto" },
@@ -45,13 +50,13 @@ return {
     },
   },
   keys = {
-    {
-      "<leader>?",
-      function()
-        require("which-key").show({ global = false })
-      end,
-      desc = "Buffer Keymaps (which-key)",
-    },
+    -- {
+    --   "<leader>?",
+    --   function()
+    --     require("which-key").show({ global = false })
+    --   end,
+    --   desc = "Buffer Keymaps (which-key)",
+    -- },
     {
       "<c-w><space>",
       function()
