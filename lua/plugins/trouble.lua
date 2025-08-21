@@ -6,12 +6,12 @@ return {
   keys = {
     {
       "<leader>td",
-      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+      "<cmd>Trouble diagnostics toggle filter.buf=0 focus=true<cr>",
       desc = "[T]rouble [D]iagnostics Buffer",
     },
     {
       "<leader>tD",
-      "<cmd>Trouble diagnostics toggle<cr>",
+      "<cmd>Trouble diagnostics toggle focus=true<cr>",
       desc = "[T]rouble [D]iagnostics Workspace",
     },
     {
@@ -26,12 +26,12 @@ return {
     },
     {
       "<leader>tt",
-      "<cmd>Trouble todo toggle filter.buf=0 focus=false<cr>",
+      "<cmd>Trouble todo toggle filter.buf=0 focus=true<cr>",
       desc = "[T]rouble [T]odo Buffer",
     },
     {
       "<leader>tT",
-      "<cmd>Trouble todo toggle focus=false<cr>",
+      "<cmd>Trouble todo toggle focus=true<cr>",
       desc = "[T]rouble [T]odo Workspace",
     },
     -- {
