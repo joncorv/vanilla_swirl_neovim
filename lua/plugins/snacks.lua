@@ -56,6 +56,21 @@ return {
       --     underline = true,
       --   },
       -- },
+      zen = {
+        enabled = true,
+        win = {
+          width = 140,
+        },
+        show = {
+          tabline = true,
+          statusline = true,
+        },
+        toggle = {
+          dim = false,
+          gitsigns = false,
+          mini_diff_signs = false,
+        },
+      },
     },
     keys = {
 
@@ -88,6 +103,20 @@ return {
           Snacks.bufdelete.delete()
         end,
         desc = "Delete Current Buffer",
+      },
+      {
+        "<Leader>uz",
+        function()
+          Snacks.zen.zen()
+        end,
+        desc = "Zen Mode",
+      },
+      {
+        "<Leader>uZ",
+        function()
+          Snacks.zen.zoom()
+        end,
+        desc = "Zen Zoom",
       },
     },
   },
