@@ -1,5 +1,40 @@
 return {
   {
+    "eldritch-theme/eldritch.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Minimal setup - this should provide default styles
+      require("eldritch").setup()
+      vim.cmd.colorscheme("eldritch")
+    end,
+  },
+
+  { "scottmckendry/cyberdream.nvim" },
+  { "olimorris/onedarkpro.nvim" },
+  { "tiagovla/tokyodark.nvim" },
+  { "akinsho/horizon.nvim" },
+  { "diegoulloao/neofusion.nvim" },
+  { "folke/tokyonight.nvim" },
+
+  {
+    "maxmx03/fluoromachine.nvim",
+    lazy = false,
+    priority = 1000,
+    -- config = function()
+    --   local fm = require("fluoromachine")
+    --
+    --   fm.setup({
+    --     glow = true,
+    --     theme = "fluoromachine",
+    --     transparent = true,
+    --   })
+    --
+    --   vim.cmd.colorscheme("fluoromachine")
+    -- end,
+  },
+
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     event = "VeryLazy",
