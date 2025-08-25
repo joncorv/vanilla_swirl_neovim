@@ -4,7 +4,6 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      -- Minimal setup - this should provide default styles
       require("eldritch").setup()
       vim.cmd.colorscheme("eldritch")
     end,
@@ -16,6 +15,48 @@ return {
   { "akinsho/horizon.nvim" },
   { "diegoulloao/neofusion.nvim" },
   { "folke/tokyonight.nvim" },
+  { "rose-pine/neovim" },
+  { "nyoom-engineering/oxocarbon.nvim" },
+  { "rebelot/kanagawa.nvim" },
+  { "EdenEast/nightfox.nvim" },
+  { "sainnhe/everforest" },
+  { "Mofiqul/dracula.nvim" },
+  { "AlexvZyl/nordic.nvim" },
+  { "neanias/everforest-nvim" },
+  { "ribru17/bamboo.nvim" },
+  { "rmehri01/onenord.nvim" },
+  { "savq/melange-nvim" },
+  { "olivercederborg/poimandres.nvim" },
+  { "0xstepit/flow.nvim" },
+  { "oxfist/night-owl.nvim" },
+  { "mhartington/oceanic-next" },
+  { "xero/miasma.nvim" },
+  { "dgox16/oldworld.nvim" },
+  { "uloco/bluloco.nvim", dependencies = { "rktjmp/lush.nvim" } },
+  { "sho-87/kanagawa-paper.nvim" },
+  { "Everblush/nvim" },
+  { "shaunsingh/moonlight.nvim" },
+  { "gbprod/nord.nvim" },
+  { "samharju/synthweave.nvim" },
+  { "mellow-theme/mellow.nvim" },
+  { "cpea2506/one_monokai.nvim" },
+  { "glepnir/zephyr-nvim" },
+  { "titanzero/zephyrium" },
+  { "cryptomilk/nightcity.nvim" },
+  { "alexmozaidze/palenight.nvim" },
+  { "sontungexpt/witch" },
+  { "niyabits/calvera-dark.nvim" },
+  { "talha-akram/noctis.nvim" },
+  { "github-main-user/lytmode.nvim" },
+  { "bkegley/gloombuddy" },
+
+  -- {
+  --   config = function()
+  --     -- Minimal setup - this should provide default styles
+  --     -- require("eldritch").setup()
+  --     vim.cmd.colorscheme("everforest")
+  --   end,
+  -- },
 
   {
     "maxmx03/fluoromachine.nvim",
