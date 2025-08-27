@@ -44,6 +44,7 @@ return {
       notify = { enabled = true },
       -- explorer = { enabled = true },
       bufdelete = { enabled = true },
+      -- image = {enabled = true},
       -- profiler = { enabled = true },
       -- scope = { enabled = true },
       -- indent = {
