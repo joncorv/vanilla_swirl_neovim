@@ -27,7 +27,9 @@ return {
   { "rmehri01/onenord.nvim" },
   { "savq/melange-nvim" },
   { "olivercederborg/poimandres.nvim" },
-  { "0xstepit/flow.nvim" },
+  {
+    "0xstepit/flow.nvim",
+  },
   { "oxfist/night-owl.nvim" },
   { "mhartington/oceanic-next" },
   { "xero/miasma.nvim" },
@@ -48,31 +50,11 @@ return {
   { "niyabits/calvera-dark.nvim" },
   { "talha-akram/noctis.nvim" },
   { "github-main-user/lytmode.nvim" },
-  { "bkegley/gloombuddy" },
-
-  -- {
-  --   config = function()
-  --     -- Minimal setup - this should provide default styles
-  --     -- require("eldritch").setup()
-  --     vim.cmd.colorscheme("everforest")
-  --   end,
-  -- },
-
+  -- { "bkegley/gloombuddy", dependencies = { "tjdevries/colorbuddy.vim" } },
   {
     "maxmx03/fluoromachine.nvim",
     lazy = false,
     priority = 1000,
-    -- config = function()
-    --   local fm = require("fluoromachine")
-    --
-    --   fm.setup({
-    --     glow = true,
-    --     theme = "fluoromachine",
-    --     transparent = true,
-    --   })
-    --
-    --   vim.cmd.colorscheme("fluoromachine")
-    -- end,
   },
 
   {
