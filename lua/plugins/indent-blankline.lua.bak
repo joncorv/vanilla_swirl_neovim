@@ -7,7 +7,6 @@ return {
   },
   keys = {
     {
-      -- keymap to toggle indent guides on and off
       "<leader>ug",
       function()
         local ibl = require("ibl")
