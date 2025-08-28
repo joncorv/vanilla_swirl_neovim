@@ -3,14 +3,16 @@ require("lsp.luals")
 require("lsp.vue")
 require("lsp.python")
 
--- -- Set LSP handlers with borders BEFORE the LspAttach autocmd
--- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
---   border = "double",
--- })
---
--- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
---   border = "double",
--- })
+vim.lsp.config("*", {
+  handlers = {
+    ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+      border = "rounded",
+    }),
+    ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+      border = "rounded",
+    }),
+  },
+})
 
 -- vim.lsp.enable("lua_ls", "vue", "rust", "rust_analyzer")
 
