@@ -9,7 +9,7 @@ vim.schedule(function()
   vim.o.clipboard = "unnamedplus"
 end)
 
-vim.o.winborder = "rounded"
+-- vim.o.winborder = "rounded"
 vim.o.breakindent = true
 vim.o.undofile = true
 vim.o.ignorecase = true
