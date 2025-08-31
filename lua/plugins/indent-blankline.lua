@@ -88,8 +88,8 @@ return {
 
     require("ibl").setup({
       indent = {
-        char = "│",
-        tab_char = "│",
+        -- char = "│",
+        -- tab_char = "│",
         -- Use very subtle color for non-active guides
         highlight = "IblIndent",
         smart_indent_cap = true,
