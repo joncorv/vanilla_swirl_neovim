@@ -5,12 +5,19 @@ return {
     priority = 1000,
     config = function()
       require("eldritch").setup()
-      vim.cmd.colorscheme("eldritch")
+      -- vim.cmd.colorscheme("eldritch")
+    end,
+  },
+
+  {
+    "olimorris/onedarkpro.nvim",
+    config = function()
+      require("onedarkpro").setup()
+      vim.cmd("colorscheme onelight")
     end,
   },
 
   { "scottmckendry/cyberdream.nvim" },
-  { "olimorris/onedarkpro.nvim" },
   { "tiagovla/tokyodark.nvim" },
   { "akinsho/horizon.nvim" },
   { "diegoulloao/neofusion.nvim" },
