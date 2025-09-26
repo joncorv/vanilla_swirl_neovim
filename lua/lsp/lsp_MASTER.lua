@@ -109,48 +109,48 @@ vim.api.nvim_create_autocmd("LspAttach", {
       })
     end
 
-    -- Toggle diagnostic Hover
-    local diagnostic_hover_enabled = false -- Start enabled by default
-    local diagnostic_hover_augroup = vim.api.nvim_create_augroup("diagnostic-hover", { clear = true })
-
-    -- Set up the initial autocmd since it's enabled by default
-    vim.api.nvim_create_autocmd("CursorHold", {
-      group = diagnostic_hover_augroup,
-      callback = function()
-        local opts = {
-          focusable = false,
-          close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-          border = "rounded",
-          source = "always",
-          prefix = " ",
-        }
-        vim.diagnostic.open_float(nil, opts)
-      end,
-    })
-
-    map("<leader>uD", function()
-      diagnostic_hover_enabled = not diagnostic_hover_enabled
-
-      if diagnostic_hover_enabled then
-        vim.api.nvim_create_autocmd("CursorHold", {
-          group = diagnostic_hover_augroup,
-          callback = function()
-            local opts = {
-              focusable = false,
-              close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-              border = "rounded",
-              source = "always",
-              prefix = " ",
-            }
-            vim.diagnostic.open_float(nil, opts)
-          end,
-        })
-        vim.notify("Diagnostic hover on cursor hold enabled", vim.log.levels.INFO)
-      else
-        vim.api.nvim_clear_autocmds({ group = diagnostic_hover_augroup })
-        vim.notify("Diagnostic hover on cursor hold disabled", vim.log.levels.INFO)
-      end
-    end, "Toggle Auto [D]iagnostic Hover")
+    -- -- Toggle diagnostic Hover
+    -- local diagnostic_hover_enabled = true -- Start enabled by default
+    -- local diagnostic_hover_augroup = vim.api.nvim_create_augroup("diagnostic-hover", { clear = true })
+    --
+    -- -- Set up the initial autocmd since it's enabled by default
+    -- vim.api.nvim_create_autocmd("CursorHold", {
+    --   group = diagnostic_hover_augroup,
+    --   callback = function()
+    --     local opts = {
+    --       focusable = false,
+    --       close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+    --       border = "rounded",
+    --       source = "always",
+    --       prefix = " ",
+    --     }
+    --     vim.diagnostic.open_float(nil, opts)
+    --   end,
+    -- })
+    --
+    -- map("<leader>uD", function()
+    --   diagnostic_hover_enabled = not diagnostic_hover_enabled
+    --
+    --   if diagnostic_hover_enabled then
+    --     vim.api.nvim_create_autocmd("CursorHold", {
+    --       group = diagnostic_hover_augroup,
+    --       callback = function()
+    --         local opts = {
+    --           focusable = false,
+    --           close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+    --           border = "rounded",
+    --           source = "always",
+    --           prefix = " ",
+    --         }
+    --         vim.diagnostic.open_float(nil, opts)
+    --       end,
+    --     })
+    --     vim.notify("Diagnostic hover on cursor hold enabled", vim.log.levels.INFO)
+    --   else
+    --     vim.api.nvim_clear_autocmds({ group = diagnostic_hover_augroup })
+    --     vim.notify("Diagnostic hover on cursor hold disabled", vim.log.levels.INFO)
+    --   end
+    -- end, "Toggle Auto [D]iagnostic Hover")
     ----
     ---
   end,
