@@ -21,6 +21,7 @@ return {
         "isort",
         "ruff",
         "bash-language-server",
+        "ts_ls",
 
         -- you can pin a tool to a particular version
         -- { 'golangci-lint', version = 'v1.47.0' },
