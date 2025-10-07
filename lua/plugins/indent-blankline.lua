@@ -55,14 +55,14 @@ return {
     -- Setup indent-blankline
     require("ibl").setup({
       indent = {
-        char = "│",
-        tab_char = "│",
+        char = "▏",
+        tab_char = "▏",
         smart_indent_cap = true,
       },
       scope = {
         enabled = true,
-        show_start = false,
-        show_end = false,
+        show_start = true,
+        show_end = true,
         highlight = highlight,
         priority = 500,
         include = {
