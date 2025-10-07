@@ -11,7 +11,7 @@ return {
         "python",
         "pyright",
         "basedpyright",
-        "tailwindcss",
+        -- "tailwindcss",
       },
     },
   },
