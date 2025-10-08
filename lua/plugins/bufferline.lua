@@ -47,7 +47,7 @@ return {
       color_icons = true,
 
       -- Buffer numbering
-      numbers = "none", -- "none" | "ordinal" | "buffer_id" | function
+      numbers = "ordinal", -- "none" | "ordinal" | "buffer_id" | function
 
       -- setting the Close delete buffer command
       close_command = ":lua Snacks.bufdelete.delete()",
