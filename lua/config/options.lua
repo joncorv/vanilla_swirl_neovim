@@ -1,6 +1,7 @@
 -- My personal settings
 vim.g.have_nerd_font = true
 
+vim.o.shell = "pwsh.exe"
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.mouse = "a"
