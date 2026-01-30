@@ -15,11 +15,11 @@ return {
         "tailwindcss-language-server",
         "shfmt",
         "json-lsp",
-        "basedpyright",
+        -- "basedpyright",
         "pyright",
         "black",
         "isort",
-        "ruff",
+        -- "ruff",
         "bash-language-server",
         "ts_ls",
 
