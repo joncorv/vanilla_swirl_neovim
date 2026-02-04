@@ -12,7 +12,7 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_far_lines = 1
   vim.g.neovide_scroll_animation_length = 0.1
   -- font settings
-  vim.o.guifont = "JetBrainsMono Nerd Font:h12"
+  vim.o.guifont = "JetBrainsMono Nerd Font:h14"
   -- fix fullscreen
   vim.api.nvim_set_keymap("n", "<F11>", ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 end
