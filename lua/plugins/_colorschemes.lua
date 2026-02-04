@@ -9,13 +9,13 @@ return {
     end,
   },
 
-  {
-    "olimorris/onedarkpro.nvim",
-    config = function()
-      require("onedarkpro").setup()
-      -- vim.cmd("colorscheme onelight")
-    end,
-  },
+  -- {
+  --   "olimorris/onedarkpro.nvim",
+  --   config = function()
+  --     require("onedarkpro").setup()
+  --     -- vim.cmd("colorscheme onelight")
+  --   end,
+  -- },
   --
   -- { "scottmckendry/cyberdream.nvim" },
   { "tiagovla/tokyodark.nvim" },
