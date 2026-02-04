@@ -5,23 +5,30 @@ return {
     priority = 1000,
     config = function()
       require("eldritch").setup()
-      vim.cmd.colorscheme("eldritch")
+      -- vim.cmd.colorscheme("eldritch")
     end,
   },
 
-  -- {
-  --   "olimorris/onedarkpro.nvim",
-  --   config = function()
-  --     require("onedarkpro").setup()
-  --     vim.cmd("colorscheme onelight")
-  --   end,
-  -- },
+  {
+    "olimorris/onedarkpro.nvim",
+    config = function()
+      require("onedarkpro").setup()
+      -- vim.cmd("colorscheme onelight")
+    end,
+  },
   --
   -- { "scottmckendry/cyberdream.nvim" },
-  -- { "tiagovla/tokyodark.nvim" },
+  { "tiagovla/tokyodark.nvim" },
   -- { "akinsho/horizon.nvim" },
   -- { "diegoulloao/neofusion.nvim" },
-  -- { "folke/tokyonight.nvim" },
+  {
+    "folke/tokyonight.nvim",
+
+    config = function()
+      require("tokyonight").setup()
+      vim.cmd.colorscheme("tokyonight-storm")
+    end,
+  },
   -- { "rose-pine/neovim" },
   -- { "nyoom-engineering/oxocarbon.nvim" },
   -- { "rebelot/kanagawa.nvim" },
@@ -44,7 +51,18 @@ return {
   -- { "uloco/bluloco.nvim", dependencies = { "rktjmp/lush.nvim" } },
   -- { "sho-87/kanagawa-paper.nvim" },
   -- { "Everblush/nvim" },
-  -- { "shaunsingh/moonlight.nvim" },
+
+  {
+    "shaunsingh/moonlight.nvim",
+    lazy = false, -- Make sure the theme loads immediately on startup
+    priority = 1000, -- Load this before other plugins
+    config = function()
+      -- This theme doesn't use a .setup() call, just the colorscheme command
+      -- vim.cmd.colorscheme("moonlight")
+      -- vim.g.moonlight_borders = true
+    end,
+  },
+
   -- { "gbprod/nord.nvim" },
   -- { "samharju/synthweave.nvim" },
   -- { "mellow-theme/mellow.nvim" },
@@ -53,15 +71,15 @@ return {
   -- { "titanzero/zephyrium" },
   -- { "cryptomilk/nightcity.nvim" },
   -- { "alexmozaidze/palenight.nvim" },
-  -- { "sontungexpt/witch" },
-  -- { "niyabits/calvera-dark.nvim" },
-  -- { "talha-akram/noctis.nvim" },
+  { "sontungexpt/witch" },
+  { "niyabits/calvera-dark.nvim" },
+  { "talha-akram/noctis.nvim" },
   -- { "github-main-user/lytmode.nvim" },
-  {
-    "maxmx03/fluoromachine.nvim",
-    lazy = false,
-    priority = 1000,
-  },
+  -- {
+  --   "maxmx03/fluoromachine.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
 
   {
     "catppuccin/nvim",
