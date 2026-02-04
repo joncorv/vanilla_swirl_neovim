@@ -1,7 +1,7 @@
 -- My personal settings
 vim.g.have_nerd_font = true
 
-vim.o.shell = "pwsh.exe"
+-- vim.o.shell = "pwsh.exe"
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.mouse = "a"
@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
   group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
   callback = function()
-    vim.hl.on_yank()
+    vim.highlight.on_yank()
   end,
 })
 
@@ -81,8 +81,6 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
--- Diagnostic Config
--- See :help vim.diagnostic.Opts
 vim.diagnostic.config({
   severity_sort = true,
   float = { border = "rounded", source = "if_many" },
@@ -95,17 +93,17 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.HINT] = "󰌶 ",
     },
   } or {},
-  virtual_text = {
-    source = "if_many",
-    spacing = 2,
-    format = function(diagnostic)
-      local diagnostic_message = {
-        [vim.diagnostic.severity.ERROR] = diagnostic.message,
-        [vim.diagnostic.severity.WARN] = diagnostic.message,
-        [vim.diagnostic.severity.INFO] = diagnostic.message,
-        [vim.diagnostic.severity.HINT] = diagnostic.message,
-      }
-      return diagnostic_message[diagnostic.severity]
-    end,
-  },
+  --   virtual_text = {
+  --     source = "if_many",
+  --     spacing = 2,
+  --     format = function(diagnostic)
+  --       local diagnostic_message = {
+  --         [vim.diagnostic.severity.ERROR] = diagnostic.message,
+  --         [vim.diagnostic.severity.WARN] = diagnostic.message,
+  --         [vim.diagnostic.severity.INFO] = diagnostic.message,
+  --         [vim.diagnostic.severity.HINT] = diagnostic.message,
+  --       }
+  --       return diagnostic_message[diagnostic.severity]
+  --     end,
+  --   },
 })
