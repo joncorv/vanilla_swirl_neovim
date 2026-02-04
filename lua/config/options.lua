@@ -1,7 +1,6 @@
 -- My personal settings
 vim.g.have_nerd_font = true
 
--- vim.o.shell = "pwsh.exe"
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.mouse = "a"
@@ -45,6 +44,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+if vim.uv.os_uname().sysname:find("Windows") then
+  vim.opt.shell = "pwsh"
+  vim.opt.shellcmdflag =
+    "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+  vim.opt.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; stop"
+  vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; stop"
+  vim.opt.shellquote = ""
+  vim.opt.shellxquote = ""
+end
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
