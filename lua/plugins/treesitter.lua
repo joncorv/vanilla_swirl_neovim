@@ -4,36 +4,34 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   branch = "main",
+  lazy = false, -- main branch does NOT support lazy loading
   build = ":TSUpdate",
-  event = { "BufReadPost", "BufNewFile" },
   cmd = { "TSInstall", "TSUpdate", "TSUpdateSync" },
 
   config = function()
-    -- The main branch uses require("nvim-treesitter").setup()
-    -- NOT the old require("nvim-treesitter.configs").setup()
-    require("nvim-treesitter").setup({
-      -- Parsers to install (add your languages here)
-      ensure_installed = {
-        "bash",
-        "css",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "nix",
-        "rust",
-        "toml",
-        "typescript",
-        "vue",
-        "yaml",
-      },
-      -- Install parsers synchronously (only applied to `ensure_installed`)
-      sync_install = false,
-      -- Automatically install missing parsers when entering buffer
-      auto_install = true,
-    })
+    -- Main branch setup (only install_dir is supported, defaults are fine)
+    require("nvim-treesitter").setup({})
+
+    -- Parsers to install (main branch uses .install() not ensure_installed)
+    local parsers = {
+      "bash",
+      "css",
+      "html",
+      "javascript",
+      "json",
+      "lua",
+      "markdown",
+      "markdown_inline",
+      "nix",
+      "rust",
+      "toml",
+      "typescript",
+      "vue",
+      "yaml",
+    }
+
+    -- Install missing parsers (async, no-op if already installed)
+    require("nvim-treesitter").install(parsers)
 
     -- Neovim 0.10+ has native treesitter highlighting via vim.treesitter.start()
     -- This autocmd enables it for buffers with available parsers
