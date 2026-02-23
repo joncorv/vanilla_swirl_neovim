@@ -9,7 +9,7 @@ return {
         "vue",
         "lua_ls",
         -- "python",
-        -- "pyright",
+        "pyright",
         -- "basedpyright",
         -- "tailwindcss",
       },
