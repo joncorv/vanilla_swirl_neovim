@@ -6,7 +6,6 @@ return {
   branch = "main",
   lazy = false, -- main branch does NOT support lazy loading
   build = ":TSUpdate",
-  cmd = { "TSInstall", "TSUpdate", "TSUpdateSync" },
 
   config = function()
     -- Main branch setup (only install_dir is supported, defaults are fine)
@@ -23,6 +22,7 @@ return {
       "markdown",
       "markdown_inline",
       "nix",
+      "python",
       "rust",
       "toml",
       "typescript",
