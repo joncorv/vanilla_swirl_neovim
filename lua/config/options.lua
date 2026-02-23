@@ -1,41 +1,36 @@
 -- My personal settings
 vim.g.have_nerd_font = true
+vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
 
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.mouse = "a"
-vim.o.showmode = false
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.mouse = "a"
+vim.opt.showmode = false
 vim.schedule(function()
-  vim.o.clipboard = "unnamedplus"
+  vim.opt.clipboard = "unnamedplus"
 end)
 
 -- vim.o.winborder = "rounded"
-vim.o.breakindent = true
-vim.o.undofile = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.signcolumn = "yes"
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
-vim.o.splitright = true
-vim.o.splitbelow = true
+vim.opt.breakindent = true
+vim.opt.undofile = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.signcolumn = "yes"
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 vim.opt.smarttab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
--- Enable break indent
-vim.opt.breakindent = true
---
--- Show line under cursor
-vim.opt.cursorline = true
-
-vim.o.list = true
+vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-vim.o.inccommand = "split"
+vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
-vim.o.cursorline = true
-vim.o.scrolloff = 10
+vim.opt.cursorline = true
+vim.opt.scrolloff = 10
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
@@ -58,7 +53,7 @@ end
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
-vim.o.confirm = true
+vim.opt.confirm = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
