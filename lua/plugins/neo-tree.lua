@@ -14,8 +14,8 @@ return {
     opts = {
       filesystem = {
         hijack_netrw_behavior = "open_current", -- or "open_default"
+        use_libuv_file_watcher = false,
       },
-      use_libuv_file_watcher = false,
       close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
       popup_border_style = "", -- or "" to use 'winborder' on Neovim v0.11+
       open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
