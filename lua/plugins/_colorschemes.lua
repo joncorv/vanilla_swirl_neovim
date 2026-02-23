@@ -1,11 +1,9 @@
 return {
   {
     "eldritch-theme/eldritch.nvim",
-    lazy = false,
-    priority = 1000,
+    event = "VeryLazy",
     config = function()
       require("eldritch").setup()
-      -- vim.cmd.colorscheme("eldritch")
     end,
   },
 
@@ -18,7 +16,7 @@ return {
   -- },
   --
   -- { "scottmckendry/cyberdream.nvim" },
-  { "tiagovla/tokyodark.nvim" },
+  { "tiagovla/tokyodark.nvim", event = "VeryLazy" },
   -- { "akinsho/horizon.nvim" },
   -- { "diegoulloao/neofusion.nvim" },
   {
@@ -54,13 +52,7 @@ return {
 
   {
     "shaunsingh/moonlight.nvim",
-    lazy = false, -- Make sure the theme loads immediately on startup
-    priority = 1000, -- Load this before other plugins
-    config = function()
-      -- This theme doesn't use a .setup() call, just the colorscheme command
-      -- vim.cmd.colorscheme("moonlight")
-      -- vim.g.moonlight_borders = true
-    end,
+    event = "VeryLazy",
   },
 
   -- { "gbprod/nord.nvim" },
@@ -71,9 +63,9 @@ return {
   -- { "titanzero/zephyrium" },
   -- { "cryptomilk/nightcity.nvim" },
   -- { "alexmozaidze/palenight.nvim" },
-  { "sontungexpt/witch" },
-  { "niyabits/calvera-dark.nvim" },
-  { "talha-akram/noctis.nvim" },
+  { "sontungexpt/witch", event = "VeryLazy" },
+  { "niyabits/calvera-dark.nvim", event = "VeryLazy" },
+  { "talha-akram/noctis.nvim", event = "VeryLazy" },
   -- { "github-main-user/lytmode.nvim" },
   -- {
   --   "maxmx03/fluoromachine.nvim",
