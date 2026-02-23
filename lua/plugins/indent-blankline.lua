@@ -50,7 +50,7 @@ return {
     end)
 
     -- Configure rainbow-delimiters integration
-    vim.g.rainbow_delimiters = { highlight = highlight }
+    vim.g.rainbow_delimiters = vim.tbl_deep_extend("force", vim.g.rainbow_delimiters or {}, { highlight = highlight })
 
     -- Setup indent-blankline
     require("ibl").setup({
