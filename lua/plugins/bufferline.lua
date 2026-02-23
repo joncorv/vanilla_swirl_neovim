@@ -149,15 +149,6 @@ return {
   config = function(_, opts)
     require("bufferline").setup(opts)
 
-    -- Fix bufferline when restoring a session
-    vim.api.nvim_create_autocmd("BufAdd", {
-      callback = function()
-        vim.schedule(function()
-          pcall(nvim_bufferline)
-        end)
-      end,
-    })
-
     -- Enhanced integration with Neovim 0.11+ LSP
     -- Automatically refresh bufferline when diagnostics change
     vim.api.nvim_create_autocmd("DiagnosticChanged", {
