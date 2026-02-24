@@ -34,6 +34,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
     end
 
+    map("K", vim.lsp.buf.hover, "Hover Documentation")
+
     -- LSP keymaps
     map("<Leader>cr", vim.lsp.buf.rename, "[C]ode [R]ename Symbol")
     map("<Leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
