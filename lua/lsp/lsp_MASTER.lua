@@ -2,6 +2,7 @@ require("lsp.luals")
 -- require("lsp.rust")
 require("lsp.vue")
 require("lsp.python")
+require("lsp.eslint")
 
 vim.lsp.config("*", {
   handlers = {
