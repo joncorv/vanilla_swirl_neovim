@@ -8,7 +8,7 @@ return {
         "vtsls",
         "rust-analyzer",
         "tailwindcss-language-server",
-        "eslint",
+        "eslint-lsp",
         "shfmt",
         "json-lsp",
         "pyright",

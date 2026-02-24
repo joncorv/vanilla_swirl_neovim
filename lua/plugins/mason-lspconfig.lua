@@ -12,6 +12,7 @@ return {
         "pyright",
         -- "basedpyright",
         -- "tailwindcss",
+        "eslint",
       },
     },
   },
