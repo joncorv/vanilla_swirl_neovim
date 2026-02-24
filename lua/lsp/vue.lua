@@ -26,6 +26,11 @@ vim.lsp.config("vtsls", {
     },
   },
   filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+  on_attach = function(client, _)
+    -- Disable vtsls formatting so ESLint LSP wins lsp_format fallback
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end,
 })
 
 -- vim.lsp.enable('volar')
