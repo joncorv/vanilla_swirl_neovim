@@ -6,15 +6,15 @@ return {
       lua = { "stylua" },
       python = { "isort", "black" },
       rust = { "rustfmt" },
-      -- Let ESLint handle JS/TS/Vue formatting via LSP fallback
-      javascript = {},
-      typescript = {},
-      vue = {},
+      sh = { "shfmt" },
+      -- JS/TS/Vue: ESLint's BufWritePre autocmd (eslint.applyAllFixes) owns these
     },
-    format_on_save = {
-      -- These options will be passed to conform.format()
-      timeout_ms = 2000,
-      lsp_format = "fallback",
-    },
+    format_on_save = function(bufnr)
+      local js_fts = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" }
+      if vim.tbl_contains(js_fts, vim.bo[bufnr].filetype) then
+        return { timeout_ms = 3000, lsp_format = "prefer" }
+      end
+      return { timeout_ms = 2000, lsp_format = "fallback" }
+    end,
   },
 }
