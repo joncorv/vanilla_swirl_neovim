@@ -2,23 +2,11 @@ return {
   {
     "eldritch-theme/eldritch.nvim",
     event = "VeryLazy",
-    config = function()
-      require("eldritch").setup()
-    end,
+    -- config = function()
+    --   require("eldritch").setup()
+    -- end,
   },
 
-  -- {
-  --   "olimorris/onedarkpro.nvim",
-  --   config = function()
-  --     require("onedarkpro").setup()
-  --     -- vim.cmd("colorscheme onelight")
-  --   end,
-  -- },
-  --
-  -- { "scottmckendry/cyberdream.nvim" },
-  { "tiagovla/tokyodark.nvim", event = "VeryLazy" },
-  -- { "akinsho/horizon.nvim" },
-  -- { "diegoulloao/neofusion.nvim" },
   {
     "folke/tokyonight.nvim",
 
@@ -27,52 +15,22 @@ return {
       vim.cmd.colorscheme("tokyonight-storm")
     end,
   },
-  -- { "rose-pine/neovim" },
-  -- { "nyoom-engineering/oxocarbon.nvim" },
-  -- { "rebelot/kanagawa.nvim" },
-  -- { "EdenEast/nightfox.nvim" },
-  -- { "sainnhe/everforest" },
-  -- { "Mofiqul/dracula.nvim" },
-  -- { "AlexvZyl/nordic.nvim" },
-  -- { "neanias/everforest-nvim" },
-  -- { "ribru17/bamboo.nvim" },
-  -- { "rmehri01/onenord.nvim" },
-  -- { "savq/melange-nvim" },
-  -- { "olivercederborg/poimandres.nvim" },
-  -- {
-  --   "0xstepit/flow.nvim",
-  -- },
-  -- { "oxfist/night-owl.nvim" },
-  -- { "mhartington/oceanic-next" },
-  -- { "xero/miasma.nvim" },
-  -- { "dgox16/oldworld.nvim" },
-  -- { "uloco/bluloco.nvim", dependencies = { "rktjmp/lush.nvim" } },
-  -- { "sho-87/kanagawa-paper.nvim" },
-  -- { "Everblush/nvim" },
-
   {
-    "shaunsingh/moonlight.nvim",
-    event = "VeryLazy",
+    "vague-theme/vague.nvim",
+    -- lazy = false,
+    -- priority = 1000,
+    -- config = function()
+    --   require("vague").setup()
+    --   vim.cmd.colorscheme("vague")
+    -- end,
   },
 
-  -- { "gbprod/nord.nvim" },
-  -- { "samharju/synthweave.nvim" },
-  -- { "mellow-theme/mellow.nvim" },
-  -- { "cpea2506/one_monokai.nvim" },
-  -- { "glepnir/zephyr-nvim" },
-  -- { "titanzero/zephyrium" },
-  -- { "cryptomilk/nightcity.nvim" },
-  -- { "alexmozaidze/palenight.nvim" },
-  { "sontungexpt/witch", event = "VeryLazy" },
-  { "niyabits/calvera-dark.nvim", event = "VeryLazy" },
-  { "talha-akram/noctis.nvim", event = "VeryLazy" },
-  -- { "github-main-user/lytmode.nvim" },
-  -- {
-  --   "maxmx03/fluoromachine.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  -- },
-
+  { "shaunsingh/moonlight.nvim" },
+  { "sontungexpt/witch" },
+  { "niyabits/calvera-dark.nvim" },
+  { "talha-akram/noctis.nvim" },
+  { "olimorris/onedarkpro.nvim" },
+  { "tiagovla/tokyodark.nvim" },
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -114,4 +72,38 @@ return {
       -- vim.cmd.colorscheme("catppuccin")
     end,
   },
+
+  -- { "akinsho/horizon.nvim" },
+  -- { "diegoulloao/neofusion.nvim" },
+  -- { "scottmckendry/cyberdream.nvim" },
+  -- { "gbprod/nord.nvim" },
+  -- { "samharju/synthweave.nvim" },
+  -- { "mellow-theme/mellow.nvim" },
+  -- { "cpea2506/one_monokai.nvim" },
+  -- { "glepnir/zephyr-nvim" },
+  -- { "titanzero/zephyrium" },
+  -- { "cryptomilk/nightcity.nvim" },
+  -- { "alexmozaidze/palenight.nvim" },
+  -- { "rose-pine/neovim" },
+  -- { "nyoom-engineering/oxocarbon.nvim" },
+  -- { "rebelot/kanagawa.nvim" },
+  -- { "EdenEast/nightfox.nvim" },
+  -- { "sainnhe/everforest" },
+  -- { "Mofiqul/dracula.nvim" },
+  -- { "AlexvZyl/nordic.nvim" },
+  -- { "neanias/everforest-nvim" },
+  -- { "ribru17/bamboo.nvim" },
+  -- { "rmehri01/onenord.nvim" },
+  -- { "savq/melange-nvim" },
+  -- { "olivercederborg/poimandres.nvim" },
+  -- { "0xstepit/flow.nvim" },
+  -- { "oxfist/night-owl.nvim" },
+  -- { "mhartington/oceanic-next" },
+  -- { "xero/miasma.nvim" },
+  -- { "dgox16/oldworld.nvim" },
+  -- { "uloco/bluloco.nvim", dependencies = { "rktjmp/lush.nvim" } },
+  -- { "sho-87/kanagawa-paper.nvim" },
+  -- { "Everblush/nvim" },
+  -- { "github-main-user/lytmode.nvim" },
+  -- { "maxmx03/fluoromachine.nvim" },
 }
