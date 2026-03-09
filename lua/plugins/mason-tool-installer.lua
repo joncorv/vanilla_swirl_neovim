@@ -4,11 +4,13 @@ return {
     require("mason-tool-installer").setup({
       ensure_installed = {
         "stylua",
+        "lua_ls",
         "vue-language-server",
         "vtsls",
         "rust-analyzer",
         "tailwindcss-language-server",
         "eslint-lsp",
+        "eslint_d",
         "shfmt",
         "json-lsp",
         "pyright",
