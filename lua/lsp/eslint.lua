@@ -8,7 +8,7 @@ vim.lsp.config("eslint", {
       },
       showDocumentation = { enable = true },
     },
-    format = true,
+    format = false,
     nodePath = "",
     onIgnoredFiles = "off",
     problems = { shortenToSingleLine = false },
