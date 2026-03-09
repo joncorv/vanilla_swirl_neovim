@@ -7,14 +7,12 @@ return {
       python = { "isort", "black" },
       rust = { "rustfmt" },
       sh = { "shfmt" },
-      -- JS/TS/Vue: ESLint's BufWritePre autocmd (eslint.applyAllFixes) owns these
+      javascript = { "eslint_d" },
+      javascriptreact = { "eslint_d" },
+      typescript = { "eslint_d" },
+      typescriptreact = { "eslint_d" },
+      vue = { "eslint_d" },
     },
-    format_on_save = function(bufnr)
-      local js_fts = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" }
-      if vim.tbl_contains(js_fts, vim.bo[bufnr].filetype) then
-        return { timeout_ms = 3000, lsp_format = "prefer" }
-      end
-      return { timeout_ms = 2000, lsp_format = "fallback" }
-    end,
+    format_on_save = { timeout_ms = 2000, lsp_format = "fallback" },
   },
 }
