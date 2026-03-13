@@ -1,36 +1,81 @@
 return {
+  -- ###########################################
+  -- LOW CONTRAST THEMES I LIKE
+  -- ###########################################
   {
-    "eldritch-theme/eldritch.nvim",
-    event = "VeryLazy",
+    "aktersnurra/no-clown-fiesta.nvim",
     -- config = function()
-    --   require("eldritch").setup()
+    --   vim.cmd.colorscheme("no-clown-fiesta")
     -- end,
   },
-
+  { "kvrohit/substrata.nvim" },
+  { "kdheepak/monochrome.nvim" },
+  { "rose-pine/neovim" },
+  { "savq/melange-nvim" },
   {
-    "folke/tokyonight.nvim",
-
+    "e-ink-colorscheme/e-ink.nvim",
+    priority = 1000,
     config = function()
-      require("tokyonight").setup()
-      vim.cmd.colorscheme("tokyonight-storm")
+      require("e-ink").setup()
+      vim.cmd.colorscheme("e-ink")
+
+      -- choose light mode or dark mode
+      vim.opt.background = "dark"
+      -- vim.opt.background = "light"
+      --
+      -- or do
+      -- :set background=dark
+      -- :set background=light
     end,
   },
-  {
-    "vague-theme/vague.nvim",
-    -- lazy = false,
-    -- priority = 1000,
-    -- config = function()
-    --   require("vague").setup()
-    --   vim.cmd.colorscheme("vague")
-    -- end,
-  },
 
+  -- ###########################################
+  -- HIGH CONTRAST RAINBOW PUKE THEMES
+  -- ###########################################
+
+  { "eldritch-theme/eldritch.nvim" },
+  { "folke/tokyonight.nvim" },
+  { "vague-theme/vague.nvim" },
   { "shaunsingh/moonlight.nvim" },
   { "sontungexpt/witch" },
   { "niyabits/calvera-dark.nvim" },
-  { "talha-akram/noctis.nvim" },
-  { "olimorris/onedarkpro.nvim" },
   { "tiagovla/tokyodark.nvim" },
+
+  -- { "shaunsingh/seoul256.nvim" },
+  -- { "talha-akram/noctis.nvim" },
+  -- { "olimorris/onedarkpro.nvim" },
+  -- { "akinsho/horizon.nvim" },
+  -- { "diegoulloao/neofusion.nvim" },
+  -- { "scottmckendry/cyberdream.nvim" },
+  -- { "gbprod/nord.nvim" },
+  -- { "samharju/synthweave.nvim" },
+  -- { "mellow-theme/mellow.nvim" },
+  -- { "cpea2506/one_monokai.nvim" },
+  -- { "glepnir/zephyr-nvim" },
+  -- { "titanzero/zephyrium" },
+  -- { "cryptomilk/nightcity.nvim" },
+  -- { "alexmozaidze/palenight.nvim" },
+  -- { "nyoom-engineering/oxocarbon.nvim" },
+  -- { "rebelot/kanagawa.nvim" },
+  -- { "EdenEast/nightfox.nvim" },
+  -- { "sainnhe/everforest" },
+  -- { "Mofiqul/dracula.nvim" },
+  -- { "AlexvZyl/nordic.nvim" },
+  -- { "neanias/everforest-nvim" },
+  -- { "ribru17/bamboo.nvim" },
+  -- { "rmehri01/onenord.nvim" },
+  -- { "olivercederborg/poimandres.nvim" },
+  -- { "0xstepit/flow.nvim" },
+  -- { "oxfist/night-owl.nvim" },
+  -- { "mhartington/oceanic-next" },
+  -- { "xero/miasma.nvim" },
+  -- { "dgox16/oldworld.nvim" },
+  -- { "uloco/bluloco.nvim", dependencies = { "rktjmp/lush.nvim" } },
+  -- { "sho-87/kanagawa-paper.nvim" },
+  -- { "Everblush/nvim" },
+  -- { "github-main-user/lytmode.nvim" },
+  -- { "maxmx03/fluoromachine.nvim" },
+
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -72,38 +117,4 @@ return {
       -- vim.cmd.colorscheme("catppuccin")
     end,
   },
-
-  -- { "akinsho/horizon.nvim" },
-  -- { "diegoulloao/neofusion.nvim" },
-  -- { "scottmckendry/cyberdream.nvim" },
-  -- { "gbprod/nord.nvim" },
-  -- { "samharju/synthweave.nvim" },
-  -- { "mellow-theme/mellow.nvim" },
-  -- { "cpea2506/one_monokai.nvim" },
-  -- { "glepnir/zephyr-nvim" },
-  -- { "titanzero/zephyrium" },
-  -- { "cryptomilk/nightcity.nvim" },
-  -- { "alexmozaidze/palenight.nvim" },
-  -- { "rose-pine/neovim" },
-  -- { "nyoom-engineering/oxocarbon.nvim" },
-  -- { "rebelot/kanagawa.nvim" },
-  -- { "EdenEast/nightfox.nvim" },
-  -- { "sainnhe/everforest" },
-  -- { "Mofiqul/dracula.nvim" },
-  -- { "AlexvZyl/nordic.nvim" },
-  -- { "neanias/everforest-nvim" },
-  -- { "ribru17/bamboo.nvim" },
-  -- { "rmehri01/onenord.nvim" },
-  -- { "savq/melange-nvim" },
-  -- { "olivercederborg/poimandres.nvim" },
-  -- { "0xstepit/flow.nvim" },
-  -- { "oxfist/night-owl.nvim" },
-  -- { "mhartington/oceanic-next" },
-  -- { "xero/miasma.nvim" },
-  -- { "dgox16/oldworld.nvim" },
-  -- { "uloco/bluloco.nvim", dependencies = { "rktjmp/lush.nvim" } },
-  -- { "sho-87/kanagawa-paper.nvim" },
-  -- { "Everblush/nvim" },
-  -- { "github-main-user/lytmode.nvim" },
-  -- { "maxmx03/fluoromachine.nvim" },
 }
