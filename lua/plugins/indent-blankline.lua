@@ -2,55 +2,54 @@ return {
   "lukas-reineke/indent-blankline.nvim",
   main = "ibl",
   event = { "BufReadPre", "BufNewFile" },
-  dependencies = {
-    "HiPhish/rainbow-delimiters.nvim",
-  },
-  keys = {
-    {
-      "<leader>ug",
-      function()
-        local ibl = require("ibl")
-        local enabled = vim.g.ibl_enabled
-        if enabled == false then
-          ibl.setup_buffer(0, { enabled = true })
-          vim.g.ibl_enabled = true
-          vim.notify("Indent guides enabled", vim.log.levels.INFO)
-        else
-          ibl.setup_buffer(0, { enabled = false })
-          vim.g.ibl_enabled = false
-          vim.notify("Indent guides disabled", vim.log.levels.INFO)
-        end
-      end,
-      desc = "Toggle Indention [G]uides",
-    },
-  },
+  -- dependencies = {
+  --   "HiPhish/rainbow-delimiters.nvim",
+  -- },
+  -- keys = {
+  --   {
+  --     "<leader>ug",
+  --     function()
+  --       local ibl = require("ibl")
+  --       local enabled = vim.g.ibl_enabled
+  --       if enabled == false then
+  --         ibl.setup_buffer(0, { enabled = true })
+  --         vim.g.ibl_enabled = true
+  --         vim.notify("Indent guides enabled", vim.log.levels.INFO)
+  --       else
+  --         ibl.setup_buffer(0, { enabled = false })
+  --         vim.g.ibl_enabled = false
+  --         vim.notify("Indent guides disabled", vim.log.levels.INFO)
+  --       end
+  --     end,
+  --     desc = "Toggle Indention [G]uides",
+  --   },
+  -- },
   config = function()
-    local highlight = {
-      "RainbowRed",
-      "RainbowYellow",
-      "RainbowBlue",
-      "RainbowOrange",
-      "RainbowGreen",
-      "RainbowViolet",
-      "RainbowCyan",
-    }
+    -- local highlight = {
+    --   "RainbowRed",
+    --   "RainbowYellow",
+    --   "RainbowBlue",
+    --   "RainbowOrange",
+    --   "RainbowGreen",
+    --   "RainbowViolet",
+    --   "RainbowCyan",
+    -- }
 
-    local hooks = require("ibl.hooks")
+    -- local hooks = require("ibl.hooks")
 
     -- Create highlight groups that reset when colorscheme changes
-    hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-      -- Rainbow colors for scope highlighting
-      vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
-      vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
-      vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
-      vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
-      vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
-      vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
-      vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
-    end)
-
+    -- hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    --   vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+    --   vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+    --   vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+    --   vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+    --   vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+    --   vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+    --   vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+    -- end)
+    --
     -- Configure rainbow-delimiters integration
-    vim.g.rainbow_delimiters = vim.tbl_deep_extend("force", vim.g.rainbow_delimiters or {}, { highlight = highlight })
+    -- vim.g.rainbow_delimiters = vim.tbl_deep_extend("force", vim.g.rainbow_delimiters or {}, { highlight = highlight })
 
     -- Setup indent-blankline
     require("ibl").setup({
@@ -63,7 +62,7 @@ return {
         enabled = true,
         show_start = true,
         show_end = true,
-        highlight = highlight,
+        -- highlight = highlight,
         priority = 500,
         include = {
           node_type = {
@@ -96,7 +95,7 @@ return {
     })
 
     -- Integrate with rainbow-delimiters for scope highlighting
-    hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+    -- hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 
     -- Vue-specific configuration for injected languages
     vim.api.nvim_create_autocmd("FileType", {
