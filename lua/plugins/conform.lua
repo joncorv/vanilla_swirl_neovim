@@ -12,6 +12,7 @@ return {
       typescript = { "eslint_d" },
       typescriptreact = { "eslint_d" },
       vue = { "eslint_d" },
+      wgsl = { lsp_format = "prefer" },
     },
     format_on_save = { timeout_ms = 2000, lsp_format = "fallback" },
   },
