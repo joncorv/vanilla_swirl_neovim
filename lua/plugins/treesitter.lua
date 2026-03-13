@@ -27,6 +27,7 @@ return {
       "toml",
       "typescript",
       "vue",
+      "wgsl",
       "yaml",
     }
 
