@@ -7,7 +7,12 @@ return {
   { "aktersnurra/no-clown-fiesta.nvim" },
   { "kvrohit/substrata.nvim" },
   { "kdheepak/monochrome.nvim" },
-  { "rose-pine/neovim" },
+  {
+    "rose-pine/neovim",
+    config = function()
+      vim.cmd.colorscheme("rose-pine-moon")
+    end,
+  },
   { "savq/melange-nvim" },
   { "e-ink-colorscheme/e-ink.nvim" },
   {
@@ -15,11 +20,8 @@ return {
     dependencies = "rktjmp/lush.nvim",
     lazy = false,
     priority = 1000,
-    -- you can set set configuration options here
     config = function()
-      -- vim.g.zenbones_darken_comments = 45
       -- vim.cmd.colorscheme("zenbones")
-      -- vim.cmd.colorscheme("tokyobones")
     end,
   },
 
@@ -27,13 +29,7 @@ return {
   -- HIGH CONTRAST RAINBOW PUKE THEMES
   -- ###########################################
 
-  {
-    "folke/tokyonight.nvim",
-    config = function()
-      vim.cmd.colorscheme("tokyonight-storm")
-    end,
-  },
-
+  { "folke/tokyonight.nvim" },
   { "eldritch-theme/eldritch.nvim" },
   { "folke/tokyonight.nvim" },
   { "vague-theme/vague.nvim" },
