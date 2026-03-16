@@ -2,44 +2,23 @@ return {
   -- ###########################################
   -- LOW CONTRAST THEMES I LIKE
   -- ###########################################
-  {
-    "aktersnurra/no-clown-fiesta.nvim",
-    -- config = function()
-    --   vim.cmd.colorscheme("no-clown-fiesta")
-    -- end,
-  },
+  { "webhooked/kanso.nvim" },
+  { "oahlen/iceberg.nvim" },
+  { "aktersnurra/no-clown-fiesta.nvim" },
   { "kvrohit/substrata.nvim" },
   { "kdheepak/monochrome.nvim" },
   { "rose-pine/neovim" },
   { "savq/melange-nvim" },
-  {
-    "e-ink-colorscheme/e-ink.nvim",
-    -- priority = 1000,
-    -- config = function()
-    --   require("e-ink").setup()
-    -- vim.cmd.colorscheme("e-ink")
-
-    -- choose light mode or dark mode
-    -- vim.opt.background = "dark"
-    -- vim.opt.background = "light"
-    --
-    -- or do
-    -- :set background=dark
-    -- :set background=light
-    --   end,
-  },
+  { "e-ink-colorscheme/e-ink.nvim" },
   {
     "zenbones-theme/zenbones.nvim",
-    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-    -- In Vim, compat mode is turned on as Lush only works in Neovim.
     dependencies = "rktjmp/lush.nvim",
     lazy = false,
     priority = 1000,
     -- you can set set configuration options here
     config = function()
       -- vim.g.zenbones_darken_comments = 45
-      vim.cmd.colorscheme("zenbones")
+      -- vim.cmd.colorscheme("zenbones")
       -- vim.cmd.colorscheme("tokyobones")
     end,
   },
@@ -47,6 +26,13 @@ return {
   -- ###########################################
   -- HIGH CONTRAST RAINBOW PUKE THEMES
   -- ###########################################
+
+  {
+    "folke/tokyonight.nvim",
+    config = function()
+      vim.cmd.colorscheme("tokyonight-storm")
+    end,
+  },
 
   { "eldritch-theme/eldritch.nvim" },
   { "folke/tokyonight.nvim" },
