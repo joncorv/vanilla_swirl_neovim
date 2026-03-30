@@ -25,5 +25,12 @@ vim.keymap.set("n", "|", ":Neotree reveal<CR>", {
   noremap = true,
 })
 
--- yank no longer replaces any overwtitten text in the register
+-- Yank no longer replaces any overwtitten text in the register
 vim.keymap.set("x", "p", "P", { silent = true })
+
+-- Select All in buffer
+vim.keymap.set("n", "<leader>a", "<ESC>ggVG", {
+  desc = "Select [a]ll in buffer",
+  silent = true,
+  noremap = true,
+})
