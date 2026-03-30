@@ -23,6 +23,7 @@ vim.opt.splitbelow = true
 vim.opt.smarttab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
+vim.opt.swapfile = false
 
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
