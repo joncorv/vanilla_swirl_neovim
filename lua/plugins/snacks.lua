@@ -37,6 +37,7 @@ return {
         },
       },
 
+      input = { enabled = true },
       toggle = { enabled = true },
       lazygit = { enabled = true },
       terminal = { enabled = true },
