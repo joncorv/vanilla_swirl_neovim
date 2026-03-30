@@ -40,7 +40,15 @@ return {
       input = { enabled = true },
       toggle = { enabled = true },
       lazygit = { enabled = true },
-      terminal = { enabled = true },
+      terminal = {
+        enabled = true,
+        win = {
+          position = "float",
+          border = "rounded",
+          height = 0.9,
+          width = 0.9,
+        },
+      },
       notifier = { enabled = true },
       notify = { enabled = true },
       -- explorer = { enabled = true },
@@ -60,6 +68,7 @@ return {
       -- },
       zen = {
         enabled = true,
+        dim = false,
         win = {
           width = 140,
         },
@@ -67,10 +76,13 @@ return {
           tabline = true,
           statusline = true,
         },
-        toggle = {
+        toggles = {
+          statusline = true,
           dim = false,
-          gitsigns = false,
-          mini_diff_signs = false,
+          gitsigns = true,
+          mini_diff_signs = true,
+          diagnostics = true,
+          -- inlay_hints = true,
         },
       },
     },
@@ -96,7 +108,15 @@ return {
         function()
           Snacks.terminal.toggle()
         end,
-        mode = { "n", "t" }, -- Specify modes here
+        mode = { "n", "t" },
+        desc = "Toggle Terminal",
+      },
+      {
+        "<C-_>",
+        function()
+          Snacks.terminal.toggle()
+        end,
+        mode = { "n", "t" },
         desc = "Toggle Terminal",
       },
       {
