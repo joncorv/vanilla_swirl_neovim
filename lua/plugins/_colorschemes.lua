@@ -2,28 +2,20 @@ return {
   -- ###########################################
   -- LOW CONTRAST THEMES I LIKE
   -- ###########################################
-  { "webhooked/kanso.nvim" },
-  { "oahlen/iceberg.nvim" },
-  { "aktersnurra/no-clown-fiesta.nvim" },
-  { "kvrohit/substrata.nvim" },
-  { "kdheepak/monochrome.nvim" },
   {
     "rose-pine/neovim",
     config = function()
       vim.cmd.colorscheme("rose-pine-moon")
     end,
   },
+  { "webhooked/kanso.nvim" },
+  { "oahlen/iceberg.nvim" },
+  { "aktersnurra/no-clown-fiesta.nvim" },
+  { "kvrohit/substrata.nvim" },
+  { "kdheepak/monochrome.nvim" },
   { "savq/melange-nvim" },
   { "e-ink-colorscheme/e-ink.nvim" },
-  {
-    "zenbones-theme/zenbones.nvim",
-    dependencies = "rktjmp/lush.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- vim.cmd.colorscheme("zenbones")
-    end,
-  },
+  { "zenbones-theme/zenbones.nvim", dependencies = "rktjmp/lush.nvim" },
 
   -- ###########################################
   -- HIGH CONTRAST RAINBOW PUKE THEMES
@@ -79,7 +71,6 @@ return {
     event = "VeryLazy",
     -- priority = 1000,
     config = function()
-      -- vim.cmd.colorscheme("catppuccin")
       require("catppuccin").setup({
         flavour = "mocha",
         styles = {
