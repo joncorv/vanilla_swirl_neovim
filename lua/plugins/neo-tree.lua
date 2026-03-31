@@ -34,6 +34,7 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-neo-tree/neo-tree.nvim", -- makes sure that this loads after Neo-tree.
     },
+    event = "LspAttach",
     config = function()
       require("lsp-file-operations").setup()
     end,

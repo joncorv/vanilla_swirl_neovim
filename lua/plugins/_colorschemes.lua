@@ -8,27 +8,26 @@ return {
       vim.cmd.colorscheme("rose-pine-moon")
     end,
   },
-  { "webhooked/kanso.nvim" },
-  { "oahlen/iceberg.nvim" },
-  { "aktersnurra/no-clown-fiesta.nvim" },
-  { "kvrohit/substrata.nvim" },
-  { "kdheepak/monochrome.nvim" },
-  { "savq/melange-nvim" },
-  { "e-ink-colorscheme/e-ink.nvim" },
-  { "zenbones-theme/zenbones.nvim", dependencies = "rktjmp/lush.nvim" },
+  { "aktersnurra/no-clown-fiesta.nvim", event = "VeryLazy" },
+  { "zenbones-theme/zenbones.nvim", event = "VeryLazy", dependencies = "rktjmp/lush.nvim" },
+  -- { "webhooked/kanso.nvim" },
+  -- { "oahlen/iceberg.nvim" },
+  -- { "kvrohit/substrata.nvim" },
+  -- { "kdheepak/monochrome.nvim" },
+  -- { "savq/melange-nvim" },
+  -- { "e-ink-colorscheme/e-ink.nvim" },
 
   -- ###########################################
   -- HIGH CONTRAST RAINBOW PUKE THEMES
   -- ###########################################
 
-  { "folke/tokyonight.nvim" },
-  { "eldritch-theme/eldritch.nvim" },
-  { "folke/tokyonight.nvim" },
-  { "vague-theme/vague.nvim" },
-  { "shaunsingh/moonlight.nvim" },
-  { "sontungexpt/witch" },
-  { "niyabits/calvera-dark.nvim" },
-  { "tiagovla/tokyodark.nvim" },
+  { "folke/tokyonight.nvim", event = "VeryLazy" },
+  -- { "eldritch-theme/eldritch.nvim" },
+  -- { "vague-theme/vague.nvim" },
+  -- { "shaunsingh/moonlight.nvim" },
+  -- { "sontungexpt/witch" },
+  -- { "niyabits/calvera-dark.nvim" },
+  -- { "tiagovla/tokyodark.nvim" },
 
   -- { "shaunsingh/seoul256.nvim" },
   -- { "talha-akram/noctis.nvim" },
@@ -65,44 +64,44 @@ return {
   -- { "github-main-user/lytmode.nvim" },
   -- { "maxmx03/fluoromachine.nvim" },
 
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    event = "VeryLazy",
-    -- priority = 1000,
-    config = function()
-      require("catppuccin").setup({
-        flavour = "mocha",
-        styles = {
-          comments = { "italic" },
-          conditionals = { "italic" },
-          keywords = { "bold" },
-          functions = { "bold" },
-        },
-        color_overrides = {
-          mocha = {
-            base = "#1a1a2e", -- Darker background (from editor.background)
-          },
-        },
-        custom_highlights = function(colors)
-          return {
-            -- Token color overrides from your VS Code config
-            ["@comment"] = { fg = "#6c7086", style = { "italic" } }, -- Dimmer comments
-            ["@string"] = { fg = "#a6e3a1" }, -- Brighter strings
-            ["@keyword"] = { fg = "#cba6f7", style = { "bold" } }, -- Enhanced keywords
-            ["@function"] = { fg = "#89b4fa", style = { "bold" } }, -- Vibrant functions
-            ["@function.call"] = { fg = "#89b4fa" },
-
-            -- Keep the Dark Pro syntax philosophy
-            ["@variable"] = { fg = colors.red },
-            ["@parameter"] = { fg = colors.red },
-            ["@property"] = { fg = colors.peach },
-            ["@type"] = { fg = colors.yellow },
-            ["@number"] = { fg = colors.peach },
-          }
-        end,
-      })
-      -- vim.cmd.colorscheme("catppuccin")
-    end,
-  },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   event = "VeryLazy",
+  --   -- priority = 1000,
+  --   config = function()
+  --     require("catppuccin").setup({
+  --       flavour = "mocha",
+  --       styles = {
+  --         comments = { "italic" },
+  --         conditionals = { "italic" },
+  --         keywords = { "bold" },
+  --         functions = { "bold" },
+  --       },
+  --       color_overrides = {
+  --         mocha = {
+  --           base = "#1a1a2e", -- Darker background (from editor.background)
+  --         },
+  --       },
+  --       custom_highlights = function(colors)
+  --         return {
+  --           -- Token color overrides from your VS Code config
+  --           ["@comment"] = { fg = "#6c7086", style = { "italic" } }, -- Dimmer comments
+  --           ["@string"] = { fg = "#a6e3a1" }, -- Brighter strings
+  --           ["@keyword"] = { fg = "#cba6f7", style = { "bold" } }, -- Enhanced keywords
+  --           ["@function"] = { fg = "#89b4fa", style = { "bold" } }, -- Vibrant functions
+  --           ["@function.call"] = { fg = "#89b4fa" },
+  --
+  --           -- Keep the Dark Pro syntax philosophy
+  --           ["@variable"] = { fg = colors.red },
+  --           ["@parameter"] = { fg = colors.red },
+  --           ["@property"] = { fg = colors.peach },
+  --           ["@type"] = { fg = colors.yellow },
+  --           ["@number"] = { fg = colors.peach },
+  --         }
+  --       end,
+  --     })
+  --     -- vim.cmd.colorscheme("catppuccin")
+  --   end,
+  -- },
 }

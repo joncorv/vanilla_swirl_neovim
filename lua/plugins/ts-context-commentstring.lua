@@ -1,5 +1,6 @@
 return {
   "JoosepAlviste/nvim-ts-context-commentstring",
+  event = "BufReadPost",
   dependencies = { "nvim-treesitter/nvim-treesitter" },
   config = function()
     -- Set the global variable to skip the deprecated module
