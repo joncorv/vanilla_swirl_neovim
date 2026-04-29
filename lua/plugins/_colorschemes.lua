@@ -5,7 +5,16 @@ return {
   {
     "rose-pine/neovim",
     config = function()
-      vim.cmd.colorscheme("rose-pine-moon")
+      require("rose-pine").setup({
+        highlight_groups = {
+          -- Visual = { bg = "iris", blend = 30 },
+          -- Visual = { bg = "pine", blend = 30 },
+          -- Visual = { bg = "gold", blend = 30 },
+          Visual = { bg = "love", blend = 30 },
+        },
+        variant = "moon",
+      })
+      vim.cmd.colorscheme("rose-pine")
     end,
   },
   { "aktersnurra/no-clown-fiesta.nvim", event = "VeryLazy" },
