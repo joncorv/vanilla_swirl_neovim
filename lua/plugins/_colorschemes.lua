@@ -29,7 +29,14 @@ return {
   -- { "kvrohit/substrata.nvim" },
   -- { "kdheepak/monochrome.nvim" },
   -- { "savq/melange-nvim" },
-  { "e-ink-colorscheme/e-ink.nvim", event = "VeryLazy" },
+  {
+    "e-ink-colorscheme/e-ink.nvim",
+    event = "VeryLazy",
+    config = function()
+      -- require("e-ink").setup()
+      vim.opt.background = "light"
+    end,
+  },
 
   -- ###########################################
   -- HIGH CONTRAST RAINBOW PUKE THEMES
