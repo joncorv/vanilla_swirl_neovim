@@ -13,6 +13,11 @@ return {
           Visual = { bg = "love", blend = 30 },
         },
         variant = "moon",
+        styles = {
+          bold = true,
+          italic = true,
+          transparency = false,
+        },
       })
       vim.cmd.colorscheme("rose-pine")
     end,
@@ -24,7 +29,7 @@ return {
   -- { "kvrohit/substrata.nvim" },
   -- { "kdheepak/monochrome.nvim" },
   -- { "savq/melange-nvim" },
-  -- { "e-ink-colorscheme/e-ink.nvim" },
+  { "e-ink-colorscheme/e-ink.nvim", event = "VeryLazy" },
 
   -- ###########################################
   -- HIGH CONTRAST RAINBOW PUKE THEMES
