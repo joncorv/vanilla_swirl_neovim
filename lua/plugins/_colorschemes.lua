@@ -7,9 +7,6 @@ return {
     config = function()
       require("rose-pine").setup({
         highlight_groups = {
-          -- Visual = { bg = "iris", blend = 30 },
-          -- Visual = { bg = "pine", blend = 30 },
-          -- Visual = { bg = "gold", blend = 30 },
           Visual = { bg = "love", blend = 30 },
         },
         variant = "moon",
@@ -34,7 +31,7 @@ return {
     event = "VeryLazy",
     config = function()
       -- require("e-ink").setup()
-      vim.opt.background = "light"
+      -- vim.opt.background = "light"
     end,
   },
 
