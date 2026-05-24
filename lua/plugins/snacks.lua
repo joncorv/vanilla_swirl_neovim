@@ -36,8 +36,6 @@ return {
           header = eldritch_header,
         },
       },
-
-      input = { enabled = true },
       toggle = { enabled = true },
       lazygit = { enabled = true },
       terminal = {
@@ -49,10 +47,12 @@ return {
           width = 0.9,
         },
       },
-      notifier = { enabled = true },
-      notify = { enabled = true },
+      input = { enabled = true },
+      -- notifier = { enabled = true },
+      -- notify = { enabled = true },
       -- explorer = { enabled = true },
       bufdelete = { enabled = true },
+      -- health = { enabled = true },
       -- image = {enabled = true},
       -- profiler = { enabled = true },
       -- scope = { enabled = true },
