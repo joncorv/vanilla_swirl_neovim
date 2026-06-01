@@ -2,33 +2,39 @@
 vim.g.have_nerd_font = true
 vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
 
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.mouse = "a"
-vim.opt.showmode = false
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.mouse = "a"
+vim.o.showmode = false
 
 -- vim.o.winborder = "rounded"
-vim.opt.breakindent = true
-vim.opt.undofile = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.signcolumn = "yes"
-vim.opt.updatetime = 250
-vim.opt.timeoutlen = 300
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.smarttab = true
-vim.opt.smartindent = true
-vim.opt.autoindent = true
-vim.opt.swapfile = false
-
-vim.opt.list = true
+vim.o.undofile = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.signcolumn = "yes"
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
+vim.o.splitright = true
+vim.o.splitbelow = true
+vim.o.swapfile = false
+vim.o.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-vim.opt.inccommand = "split"
+vim.o.inccommand = "split"
+
+-- Tab options
+vim.o.smarttab = true
+vim.o.smartindent = true
+vim.o.autoindent = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true
+vim.o.linebreak = true
+vim.o.breakindent = true
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
-vim.opt.scrolloff = 10
+vim.o.cursorline = true
+vim.o.scrolloff = 10
 
 -- map j & k to visual line movement
 vim.keymap.set({ "n", "v" }, "j", "gj")
@@ -43,19 +49,19 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 if vim.uv.os_uname().sysname:find("Windows") then
-  vim.opt.shell = "pwsh"
-  vim.opt.shellcmdflag =
+  vim.o.shell = "pwsh"
+  vim.o.shellcmdflag =
     "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-  vim.opt.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; stop"
-  vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; stop"
-  vim.opt.shellquote = ""
-  vim.opt.shellxquote = ""
+  vim.o.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; stop"
+  vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; stop"
+  vim.o.shellquote = ""
+  vim.o.shellxquote = ""
 end
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
-vim.opt.confirm = true
+vim.o.confirm = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -115,5 +121,5 @@ vim.diagnostic.config({
 })
 
 vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
+  vim.o.clipboard = "unnamedplus"
 end)
