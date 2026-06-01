@@ -1,8 +1,8 @@
-vim.lsp.enable("basedpyright")
--- vim.lsp.enable("pyright")
+-- vim.lsp.enable("basedpyright")
+vim.lsp.enable("pyright")
 
 if vim.uv.os_uname().sysname:find("Windows") then
-  vim.lsp.config("basedpyright", {
+  vim.lsp.config("pyright", {
     settings = {
       python = {
         analysis = {
