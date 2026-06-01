@@ -6,9 +6,6 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 vim.opt.showmode = false
-vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
-end)
 
 -- vim.o.winborder = "rounded"
 vim.opt.breakindent = true
@@ -32,6 +29,10 @@ vim.opt.inccommand = "split"
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
+
+-- map j & k to visual line movement
+vim.keymap.set({ "n", "v" }, "j", "gj")
+vim.keymap.set({ "n", "v" }, "k", "gk")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
@@ -112,3 +113,7 @@ vim.diagnostic.config({
   --     end,
   --   },
 })
+
+vim.schedule(function()
+  vim.opt.clipboard = "unnamedplus"
+end)
