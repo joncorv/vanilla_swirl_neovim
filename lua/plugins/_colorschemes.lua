@@ -19,6 +19,14 @@ return {
       vim.cmd.colorscheme("rose-pine")
     end,
   },
+  {
+    "marekh19/meowsoot.nvim",
+    -- lazy = false,
+    -- priority = 1000,
+    -- config = function()
+    --   vim.cmd.colorscheme("meowsoot")
+    -- end,
+  },
   { "aktersnurra/no-clown-fiesta.nvim", event = "VeryLazy" },
   { "zenbones-theme/zenbones.nvim", event = "VeryLazy", dependencies = "rktjmp/lush.nvim" },
   -- { "webhooked/kanso.nvim" },
