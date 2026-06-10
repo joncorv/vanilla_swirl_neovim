@@ -4,17 +4,6 @@ require("lsp.vue")
 require("lsp.python")
 require("lsp.eslint")
 
-vim.lsp.config("*", {
-  handlers = {
-    ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-      border = "rounded",
-    }),
-    ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-      border = "rounded",
-    }),
-  },
-})
-
 -- vim.lsp.enable("lua_ls", "vue", "rust", "rust_analyzer")
 
 --  This function gets run when an LSP attaches to a particular buffer.
@@ -34,7 +23,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
     end
 
-    map("K", vim.lsp.buf.hover, "Hover Documentation")
+    map("K", function()
+      vim.lsp.buf.hover({ border = "rounded" })
+    end, "Hover Documentation")
 
     -- LSP keymaps
     map("<Leader>cr", vim.lsp.buf.rename, "[C]ode [R]ename Symbol")
