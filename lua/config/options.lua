@@ -1,6 +1,7 @@
 -- My personal settings
 vim.g.have_nerd_font = true
-vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
+local path_sep = vim.fn.has("win32") == 1 and ";" or ":"
+vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin" .. path_sep .. vim.env.PATH
 
 vim.o.number = true
 vim.o.relativenumber = true
