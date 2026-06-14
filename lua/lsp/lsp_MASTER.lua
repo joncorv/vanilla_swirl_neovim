@@ -38,6 +38,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("<Leader>cw", vim.lsp.buf.workspace_symbol, "[C]ode [W]orkspace Symbols")
     map("<Leader>ct", vim.lsp.buf.type_definition, "[C]ode [T]ype Definition")
 
+    -- restart lsp on current buffer
+    map("<leader>cx", function()
+      -- vim.lsp.stop_client(vim.lsp.get_clients({ bufnr = 0 }))
+      vim.lsp.stop_client(vim.lsp.get_clients())
+      vim.cmd("edit")
+    end, "[C]ode [X] ☠️ Kill LSP")
+
     -- All my UI Diagnostic Toggles
     map("<leader>ul", vim.diagnostic.open_float, "[U]I [L]ine Diagnostics")
     map("<leader>uh", function()
