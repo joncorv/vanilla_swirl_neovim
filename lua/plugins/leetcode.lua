@@ -7,7 +7,7 @@ return {
     "MunifTanjim/nui.nvim",
   },
   opts = {
-    lang = "python3",
+    lang = "rust",
     picker = { provider = "fzf-lua" },
   },
 }
