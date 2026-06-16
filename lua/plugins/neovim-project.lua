@@ -13,7 +13,11 @@ return {
     -- so these only need to cover where you keep clusters of projects.
     projects = {
       "~/Documents/*",
+      "~/.config/*",
     },
+    -- Only auto-restore when launched from inside a project directory; don't
+    -- fall back to the most recent session when opened elsewhere (e.g. ~/.config/nvim).
+    last_session_on_startup = false,
     picker = {
       type = "fzf-lua",
     },
