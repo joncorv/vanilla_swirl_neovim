@@ -4,8 +4,8 @@ return {
   priority = 100,
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "ibhagwan/fzf-lua",
     "Shatur/neovim-session-manager",
+    "ibhagwan/fzf-lua",
   },
   opts = {
     -- Glob patterns for project discovery (used by :NeovimProjectDiscover).
@@ -21,6 +21,9 @@ return {
     last_session_on_startup = false,
     picker = {
       type = "fzf-lua",
+      preview = {
+        enabled = false,
+      },
     },
   },
   init = function()
