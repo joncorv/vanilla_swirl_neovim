@@ -16,4 +16,16 @@ if vim.g.neovide then
   vim.o.guifont = "Maple Mono NF:h14"
   -- fix fullscreen
   vim.api.nvim_set_keymap("n", "<F11>", ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
+
+  -- keymaps for making text larger and smaller
+  -- vim.g.neovide_scale_factor = 1.0
+  vim.keymap.set("n", "<C-=>", function()
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1
+    print("neovide scale factor =", vim.g.neovide_scale_factor)
+  end, { desc = "Neovide Scale Up" })
+
+  vim.keymap.set("n", "<C-->", function()
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1
+    print("neovide scale factor =", vim.g.neovide_scale_factor)
+  end, { desc = "Neovide Scale Down" })
 end
