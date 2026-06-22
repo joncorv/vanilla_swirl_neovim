@@ -48,13 +48,13 @@ return {
   -- ###########################################
 
   { "folke/tokyonight.nvim", event = "VeryLazy" },
-  -- { "eldritch-theme/eldritch.nvim" },
-  -- { "vague-theme/vague.nvim" },
-  -- { "shaunsingh/moonlight.nvim" },
-  -- { "sontungexpt/witch" },
-  -- { "niyabits/calvera-dark.nvim" },
-  -- { "tiagovla/tokyodark.nvim" },
+  { "eldritch-theme/eldritch.nvim", event = "VeryLazy" },
+  { "vague-theme/vague.nvim", event = "VeryLazy" },
+  { "shaunsingh/moonlight.nvim", event = "VeryLazy" },
+  { "sontungexpt/witch", event = "VeryLazy" },
+  { "niyabits/calvera-dark.nvim", event = "VeryLazy" },
 
+  -- { "tiagovla/tokyodark.nvim", event = "VeryLazy" },
   -- { "shaunsingh/seoul256.nvim" },
   -- { "talha-akram/noctis.nvim" },
   -- { "olimorris/onedarkpro.nvim" },
