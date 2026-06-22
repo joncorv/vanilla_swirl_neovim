@@ -4,7 +4,7 @@ return {
 
   opts = {
     custom_surroundings = nil,
-    highlight_duration = 500,
+    highlight_duration = 1000,
 
     mappings = {
       add = "sa", -- Add surrounding in Normal and Visual modes
