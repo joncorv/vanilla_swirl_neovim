@@ -15,6 +15,7 @@ return {
       "~/Documents/*",
       "~/.config/*",
       "C:/Users/joncorv/AppData/Local/nvim",
+      "/Volumes/Projects/Obsidian/Obsidian Vault",
     },
     -- Only auto-restore when launched from inside a project directory; don't
     -- fall back to the most recent session when opened elsewhere (e.g. ~/.config/nvim).
