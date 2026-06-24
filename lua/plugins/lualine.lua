@@ -41,7 +41,8 @@ return {
   end,
 
   dependencies = {
-    "nvim-tree/nvim-web-devicons",
+    -- "nvim-tree/nvim-web-devicons",
+    "nvim-mini/mini.icons",
     "meuter/lualine-so-fancy.nvim",
   },
 

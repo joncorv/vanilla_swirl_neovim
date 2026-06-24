@@ -9,7 +9,7 @@ local DIAGNOSTIC_ICONS = {
 return {
   "akinsho/bufferline.nvim",
   version = "*",
-  dependencies = "nvim-tree/nvim-web-devicons",
+  dependencies = "nvim-mini/mini.icons",
   event = "VeryLazy",
   keys = {
     { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next buffer" },
