@@ -11,6 +11,14 @@ if vim.g.neovide then
   -- vim.g.neovide_position_animation_length = 0.0025
   vim.g.neovide_scroll_animation_far_lines = 1
   vim.g.neovide_scroll_animation_length = 0.1
+
+  -- Transparency Settings
+  vim.g.neovide_opacity = 0.75
+  vim.g.normal_opacity = 0.75
+  vim.g.neovide_show_border = true
+  vim.g.neovide_window_blurred = true
+  -- vim.api.nvim_set_hl(0, "Normal", { bg = "#0a0a0f" }) -- near-black with a slight tint
+
   -- font settings
   -- vim.o.guifont = "JetBrainsMono Nerd Font:h14"
   vim.o.guifont = "Maple Mono NF:h14"
