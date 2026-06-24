@@ -3,6 +3,8 @@ require("lsp.luals")
 require("lsp.vue")
 require("lsp.python")
 require("lsp.eslint")
+vim.lsp.enable("markdown-oxide")
+vim.lsp.enable("ols")
 
 -- vim.lsp.enable("lua_ls", "vue", "rust", "rust_analyzer")
 
