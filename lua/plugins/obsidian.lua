@@ -1,3 +1,6 @@
+local vault_path = vim.fn.has("win32") == 1 and "Z:/Obsidian/Obsidian Vault"
+  or "/Volumes/Projects/Obsidian/Obsidian Vault"
+
 return {
   "epwalsh/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
@@ -19,7 +22,7 @@ return {
     workspaces = {
       {
         name = "My_Vault",
-        path = "/Volumes/Projects/Obsidian/Obsidian Vault",
+        path = vault_path,
       },
     },
     picker = {
