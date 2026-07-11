@@ -18,8 +18,12 @@ vim.keymap.set("n", "|", ":Neotree reveal<CR>", {
   noremap = true,
 })
 
--- Yank no longer replaces any overwtitten text in the register
+-- Paste no longer replaces any overwtitten text in the register
 vim.keymap.set("x", "p", "P", { silent = true })
+
+-- x no longer replaces any overwtitten text in the register
+vim.keymap.set("n", "x", '"_x', { noremap = true })
+vim.keymap.set("x", "x", '"_x', { noremap = true })
 
 -- Select All in buffer
 vim.keymap.set("n", "<leader>a", "<ESC>ggVG", {
