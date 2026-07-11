@@ -4,6 +4,11 @@ return {
   dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.icons" },
   opts = {
 
+    completions = { lsp = { enabled = true } },
+
+    -- sign = {
+    --   enabled = false,
+    -- },
     preset = "obsidian",
   },
 }
