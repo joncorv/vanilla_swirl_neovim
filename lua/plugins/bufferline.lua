@@ -104,7 +104,7 @@ return {
       -- Enforce regular tab size
       enforce_regular_tabs = false,
       tab_size = 21,
-      max_name_length = 30,
+      max_name_length = 20,
       max_prefix_length = 30,
       truncate_names = true,
 
@@ -123,14 +123,14 @@ return {
               return buf.name:match("%.test") or buf.name:match("%.spec")
             end,
           },
-          {
-            name = "Docs",
-            highlight = { underline = true, sp = "green" },
-            auto_close = false,
-            matcher = function(buf)
-              return buf.name:match("%.md") or buf.name:match("%.txt")
-            end,
-          },
+          -- {
+          --   name = "Docs",
+          --   highlight = { underline = true, sp = "green" },
+          --   auto_close = false,
+          --   matcher = function(buf)
+          --     return buf.name:match("%.md") or buf.name:match("%.txt")
+          --   end,
+          -- },
         },
       },
     },
