@@ -3,31 +3,31 @@
 return {
   {
     "mrcjkb/rustaceanvim",
-    version = "^4",
+    version = "^9",
     ft = { "rust" },
-    init = function()
-      vim.g.rustaceanvim = {
-        server = {
-          settings = {
-            ["rust-analyzer"] = {
-              checkOnSave = true,
-              check = {
-                command = "clippy",
-              },
-              cargo = {
-                allFeatures = true,
-              },
-            },
-          },
-        },
-      }
-    end,
+    -- init = function()
+    --   vim.g.rustaceanvim = {
+    --     server = {
+    --       settings = {
+    --         ["rust-analyzer"] = {
+    --           checkOnSave = true,
+    --           check = {
+    --             command = "clippy",
+    --           },
+    --           cargo = {
+    --             allFeatures = true,
+    --           },
+    --         },
+    --       },
+    --     },
+    --   }
+    -- end,
   },
-  {
-    "Saecki/crates.nvim",
-    ft = { "toml" },
-    config = function()
-      require("crates").setup({})
-    end,
-  },
+  -- {
+  --   "Saecki/crates.nvim",
+  --   ft = { "toml" },
+  --   config = function()
+  --     require("crates").setup({})
+  --   end,
+  -- },
 }
