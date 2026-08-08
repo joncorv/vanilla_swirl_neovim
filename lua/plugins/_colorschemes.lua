@@ -34,6 +34,7 @@ return {
   { "kvrohit/substrata.nvim", event = "VeryLazy" },
   { "kdheepak/monochrome.nvim", event = "VeryLazy" },
   { "savq/melange-nvim", event = "VeryLazy" },
+  { "https://github.com/WTFox/luna.nvim.git", event = "VeryLazy" },
   {
     "e-ink-colorscheme/e-ink.nvim",
     event = "VeryLazy",
