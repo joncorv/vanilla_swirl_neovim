@@ -79,7 +79,7 @@ return {
         enabled = true,
         dim = false,
         win = {
-          width = 180,
+          width = 140,
         },
         show = {
           tabline = true,

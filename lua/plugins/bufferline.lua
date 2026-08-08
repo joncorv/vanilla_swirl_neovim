@@ -103,9 +103,9 @@ return {
 
       -- Enforce regular tab size
       enforce_regular_tabs = false,
-      tab_size = 21,
-      max_name_length = 20,
-      max_prefix_length = 30,
+      tab_size = 13,
+      max_name_length = 13,
+      max_prefix_length = 13,
       truncate_names = true,
 
       -- Groups configuration
