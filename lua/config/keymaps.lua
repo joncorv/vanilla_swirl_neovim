@@ -31,3 +31,16 @@ vim.keymap.set("n", "<leader>a", "<ESC>ggVG", {
   silent = true,
   noremap = true,
 })
+
+-- Set background to be transparent
+local function set_bg_transparent()
+  -- local current_val = vim.api.nvim_get_hl(0, { name = "Normal" })
+  -- print(current_val)
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+end
+
+vim.keymap.set("n", "<leader>ub", function()
+  set_bg_transparent()
+end, {
+  desc = "make bg invisible",
+})
