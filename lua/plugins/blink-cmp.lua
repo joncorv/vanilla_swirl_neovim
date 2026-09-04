@@ -51,8 +51,15 @@ return {
         nerd_font_variant = "mono",
       },
 
-      -- (Default) Only show the documentation popup when manually triggered
-      completion = { documentation = { auto_show = true } },
+      -- Keep Markdown completion available on demand without showing it while typing.
+      completion = {
+        documentation = { auto_show = true },
+        menu = {
+          auto_show = function()
+            return vim.bo.filetype ~= "markdown"
+          end,
+        },
+      },
       signature = { enabled = true },
 
       -- Default list of enabled providers defined so that you can extend it
